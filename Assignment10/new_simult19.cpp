@@ -646,8 +646,8 @@ int MEM() {
 
     // casual TODO: can we do this^ in previous stages too by doing this change
     // in the previous stage itself? (only for minimising the number of stalls,
-    //not relevant now, remember that premature optimization is the root cause
-    //of all evil)
+    // not relevant now, remember that premature optimization is the root cause
+    // of all evil)
 
     mem_wb.wb = ex_mem.wb;
 
