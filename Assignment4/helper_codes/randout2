@@ -1,0 +1,1654 @@
+Instruction number: 1
+add t3 s0 t6 
+reg[11] becomes reg[16] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 2
+add t9 t4 s3 
+reg[25] becomes reg[12] + reg[19] which is 0 + 0 = 0
+
+Instruction number: 3
+add t8 s7 t6 
+reg[24] becomes reg[23] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 4
+lw s4 2921 s4
+lw operation
+
+Instruction number: 5
+add s5 t8 s7 
+reg[21] becomes reg[24] + reg[23] which is 0 + 0 = 0
+
+Instruction number: 6
+add t6 t6 s2 
+reg[14] becomes reg[14] + reg[18] which is 0 + 0 = 0
+
+Instruction number: 7
+lw t9 204 s4
+lw operation
+
+Instruction number: 8
+sw s2 2942 t8
+sw operation
+
+Instruction number: 9
+add t9 t8 t6 
+reg[25] becomes reg[24] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 10
+add t2 s4 s2 
+reg[10] becomes reg[20] + reg[18] which is 1 + 0 = 1
+
+Instruction number: 11
+add t4 s3 s6 
+reg[12] becomes reg[19] + reg[22] which is 0 + 0 = 0
+
+Instruction number: 12
+add t4 t4 t6 
+reg[12] becomes reg[12] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 13
+add s2 s7 s5 
+reg[18] becomes reg[23] + reg[21] which is 0 + 0 = 0
+
+Instruction number: 14
+sw s6 481 t6
+sw operation
+
+Instruction number: 15
+lw t8 2408 t5
+lw operation
+
+Instruction number: 16
+add s0 t7 s7 
+reg[16] becomes reg[15] + reg[23] which is 0 + 0 = 0
+
+Instruction number: 17
+add s7 t0 t1 
+reg[23] becomes reg[8] + reg[9] which is 0 + 0 = 0
+
+Instruction number: 18
+add t9 t0 s6 
+reg[25] becomes reg[8] + reg[22] which is 0 + 0 = 0
+
+Instruction number: 19
+sw s2 2787 s5
+sw operation
+
+Instruction number: 20
+lw s0 2258 t0
+lw operation
+
+Instruction number: 21
+add s7 t2 t0 
+reg[23] becomes reg[10] + reg[8] which is 1 + 0 = 1
+
+Instruction number: 22
+sw t6 2156 t3
+sw operation
+
+Instruction number: 23
+add s3 s0 t5 
+reg[19] becomes reg[16] + reg[13] which is 1 + 0 = 1
+
+Instruction number: 24
+add t2 s5 t3 
+reg[10] becomes reg[21] + reg[11] which is 0 + 0 = 0
+
+Instruction number: 25
+lw s1 2401 t9
+lw operation
+
+Instruction number: 26
+lw t8 2790 t6
+lw operation
+
+Instruction number: 27
+sw t9 2555 t6
+sw operation
+
+Instruction number: 28
+add t8 s5 t0 
+reg[24] becomes reg[21] + reg[8] which is 0 + 0 = 0
+
+Instruction number: 29
+lw t9 1000 t5
+lw operation
+
+Instruction number: 30
+sw s0 2408 t4
+sw operation
+
+Instruction number: 31
+add s2 t0 s4 
+reg[18] becomes reg[8] + reg[20] which is 0 + 1 = 1
+
+Instruction number: 32
+lw s2 90 s3
+lw operation
+
+Instruction number: 33
+lw s7 1874 t5
+lw operation
+
+Instruction number: 34
+sw t1 1886 s3
+sw operation
+
+Instruction number: 35
+sw t9 2744 s6
+sw operation
+
+Instruction number: 36
+add s6 s5 s0 
+reg[22] becomes reg[21] + reg[16] which is 0 + 1 = 1
+
+Instruction number: 37
+lw s0 1068 t1
+lw operation
+
+Instruction number: 38
+add s4 t3 t9 
+reg[20] becomes reg[11] + reg[25] which is 0 + 1 = 1
+
+Instruction number: 39
+lw t6 939 t9
+lw operation
+
+Instruction number: 40
+lw t8 761 s7
+lw operation
+
+Instruction number: 41
+sw s3 352 s0
+sw operation
+
+Instruction number: 42
+lw s3 656 t0
+lw operation
+
+Instruction number: 43
+add t3 t2 t2 
+reg[11] becomes reg[10] + reg[10] which is 0 + 0 = 0
+
+Instruction number: 44
+sw t4 2673 s4
+sw operation
+
+Instruction number: 45
+add s0 t7 t5 
+reg[16] becomes reg[15] + reg[13] which is 0 + 0 = 0
+
+Instruction number: 46
+lw t7 486 t6
+lw operation
+
+Instruction number: 47
+add s1 s3 t3 
+reg[17] becomes reg[19] + reg[11] which is 1 + 0 = 1
+
+Instruction number: 48
+lw t4 2467 t3
+lw operation
+
+Instruction number: 49
+add s4 t9 t9 
+reg[20] becomes reg[25] + reg[25] which is 1 + 1 = 2
+
+Instruction number: 50
+sw s1 784 t3
+sw operation
+
+Instruction number: 51
+sw t0 1744 t8
+sw operation
+
+Instruction number: 52
+sw t3 2708 t6
+sw operation
+
+Instruction number: 53
+add t6 s7 s2 
+reg[14] becomes reg[23] + reg[18] which is 0 + 0 = 0
+
+Instruction number: 54
+sw s0 1935 t9
+sw operation
+
+Instruction number: 55
+lw s5 2954 s3
+lw operation
+
+Instruction number: 56
+add t5 t5 t7 
+reg[13] becomes reg[13] + reg[15] which is 0 + 0 = 0
+
+Instruction number: 57
+add s4 t0 t3 
+reg[20] becomes reg[8] + reg[11] which is 0 + 0 = 0
+
+Instruction number: 58
+add s1 s5 s4 
+reg[17] becomes reg[21] + reg[20] which is 1 + 0 = 1
+
+Instruction number: 59
+add s4 t1 t0 
+reg[20] becomes reg[9] + reg[8] which is 0 + 0 = 0
+
+Instruction number: 60
+add s3 t9 s5 
+reg[19] becomes reg[25] + reg[21] which is 1 + 1 = 2
+
+Instruction number: 61
+lw t0 2365 s7
+lw operation
+
+Instruction number: 62
+add t6 t3 t6 
+reg[14] becomes reg[11] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 63
+lw s6 1890 s6
+lw operation
+
+Instruction number: 64
+sw t1 1946 t6
+sw operation
+
+Instruction number: 65
+lw t1 817 t0
+lw operation
+
+Instruction number: 66
+add t7 s4 s6 
+reg[15] becomes reg[20] + reg[22] which is 0 + 0 = 0
+
+Instruction number: 67
+lw s5 2038 s2
+lw operation
+
+Instruction number: 68
+lw s6 773 t4
+lw operation
+
+Instruction number: 69
+sw s7 1078 s4
+sw operation
+
+Instruction number: 70
+sw s2 1496 t8
+sw operation
+
+Instruction number: 71
+sw t4 1002 s5
+sw operation
+
+Instruction number: 72
+add t6 s0 t6 
+reg[14] becomes reg[16] + reg[14] which is 0 + 0 = 0
+
+Instruction number: 73
+sw t5 2484 s6
+sw operation
+
+Instruction number: 74
+sw s0 1242 t7
+sw operation
+
+Instruction number: 75
+lw s2 1090 s4
+lw operation
+
+Instruction number: 76
+lw t8 1252 t8
+lw operation
+
+Instruction number: 77
+add t4 t9 t4 
+reg[12] becomes reg[25] + reg[12] which is 1 + 0 = 1
+
+Instruction number: 78
+lw t8 3030 s3
+lw operation
+
+Instruction number: 79
+sw t9 1268 t0
+sw operation
+
+Instruction number: 80
+sw s1 713 t6
+sw operation
+
+Instruction number: 81
+add s3 t2 s1 
+reg[19] becomes reg[10] + reg[17] which is 0 + 1 = 1
+
+Instruction number: 82
+add t3 t9 t6 
+reg[11] becomes reg[25] + reg[14] which is 1 + 0 = 1
+
+Instruction number: 83
+add t9 t4 s6 
+reg[25] becomes reg[12] + reg[22] which is 1 + 0 = 1
+
+Instruction number: 84
+add t9 t3 t0 
+reg[25] becomes reg[11] + reg[8] which is 1 + 0 = 1
+
+Instruction number: 85
+sw t6 1237 t7
+sw operation
+
+Instruction number: 86
+lw s7 2661 t3
+lw operation
+
+Instruction number: 87
+add t2 s3 s7 
+reg[10] becomes reg[19] + reg[23] which is 1 + 1 = 2
+
+Instruction number: 88
+add t7 s6 t9 
+reg[15] becomes reg[22] + reg[25] which is 0 + 1 = 1
+
+Instruction number: 89
+add t1 s0 t9 
+reg[9] becomes reg[16] + reg[25] which is 0 + 1 = 1
+
+Instruction number: 90
+sw s3 952 t8
+sw operation
+
+Instruction number: 91
+add s1 s6 t8 
+reg[17] becomes reg[22] + reg[24] which is 0 + 1 = 1
+
+Instruction number: 92
+lw s3 2405 s1
+lw operation
+
+Instruction number: 93
+add t7 s1 t9 
+reg[15] becomes reg[17] + reg[25] which is 1 + 1 = 2
+
+Instruction number: 94
+add t6 t1 s4 
+reg[14] becomes reg[9] + reg[20] which is 1 + 0 = 1
+
+Instruction number: 95
+add t1 t9 t8 
+reg[9] becomes reg[25] + reg[24] which is 1 + 1 = 2
+
+Instruction number: 96
+lw s2 1109 s1
+lw operation
+
+Instruction number: 97
+add s2 s1 t3 
+reg[18] becomes reg[17] + reg[11] which is 1 + 1 = 2
+
+Instruction number: 98
+add t2 t3 s7 
+reg[10] becomes reg[11] + reg[23] which is 1 + 1 = 2
+
+Instruction number: 99
+sw t2 1514 s4
+sw operation
+
+Instruction number: 100
+add t2 s2 s6 
+reg[10] becomes reg[18] + reg[22] which is 2 + 0 = 2
+
+Instruction number: 101
+lw s5 1792 t4
+lw operation
+
+Instruction number: 102
+add t7 t2 s6 
+reg[15] becomes reg[10] + reg[22] which is 2 + 0 = 2
+
+Instruction number: 103
+add s4 s5 s0 
+reg[20] becomes reg[21] + reg[16] which is 1 + 0 = 1
+
+Instruction number: 104
+add t1 s1 t0 
+reg[9] becomes reg[17] + reg[8] which is 1 + 0 = 1
+
+Instruction number: 105
+lw t7 48 s7
+lw operation
+
+Instruction number: 106
+lw s1 1777 s7
+lw operation
+
+Instruction number: 107
+add s4 s5 s7 
+reg[20] becomes reg[21] + reg[23] which is 1 + 1 = 2
+
+Instruction number: 108
+add s5 t9 s4 
+reg[21] becomes reg[25] + reg[20] which is 1 + 2 = 3
+
+Instruction number: 109
+sw t4 1441 t7
+sw operation
+
+Instruction number: 110
+lw t5 217 s0
+lw operation
+
+Instruction number: 111
+lw t3 108 s4
+lw operation
+
+Instruction number: 112
+lw s1 1635 t8
+lw operation
+
+Instruction number: 113
+add s0 t0 s1 
+reg[16] becomes reg[8] + reg[17] which is 0 + 0 = 0
+
+Instruction number: 114
+lw s0 2736 s5
+lw operation
+
+Instruction number: 115
+add s2 s6 t7 
+reg[18] becomes reg[22] + reg[15] which is 0 + 0 = 0
+
+Instruction number: 116
+sw t9 113 s6
+sw operation
+
+Instruction number: 117
+sw s5 2725 t3
+sw operation
+
+Instruction number: 118
+sw t1 375 s7
+sw operation
+
+Instruction number: 119
+sw t9 1657 s6
+sw operation
+
+Instruction number: 120
+sw t0 1417 t0
+sw operation
+
+Instruction number: 121
+add s2 t4 s7 
+reg[18] becomes reg[12] + reg[23] which is 1 + 1 = 2
+
+Instruction number: 122
+lw t6 1844 t2
+lw operation
+
+Instruction number: 123
+add s3 s4 t5 
+reg[19] becomes reg[20] + reg[13] which is 2 + 0 = 2
+
+Instruction number: 124
+add t1 s4 t9 
+reg[9] becomes reg[20] + reg[25] which is 2 + 1 = 3
+
+Instruction number: 125
+lw s7 826 t5
+lw operation
+
+Instruction number: 126
+sw t2 2948 t3
+sw operation
+
+Instruction number: 127
+add s5 s2 t0 
+reg[21] becomes reg[18] + reg[8] which is 2 + 0 = 2
+
+Instruction number: 128
+add s4 s6 s4 
+reg[20] becomes reg[22] + reg[20] which is 0 + 2 = 2
+
+Instruction number: 129
+lw t8 113 s4
+lw operation
+
+Instruction number: 130
+lw s2 26 t7
+lw operation
+
+Instruction number: 131
+add s5 s2 t6 
+reg[21] becomes reg[18] + reg[14] which is 1 + 1 = 2
+
+Instruction number: 132
+lw t3 1156 t0
+lw operation
+
+Instruction number: 133
+add t2 t0 s4 
+reg[10] becomes reg[8] + reg[20] which is 0 + 2 = 2
+
+Instruction number: 134
+add t7 s7 s4 
+reg[15] becomes reg[23] + reg[20] which is 0 + 2 = 2
+
+Instruction number: 135
+add t1 t9 t8 
+reg[9] becomes reg[25] + reg[24] which is 1 + 0 = 1
+
+Instruction number: 136
+lw t1 2691 t4
+lw operation
+
+Instruction number: 137
+add s5 t1 s1 
+reg[21] becomes reg[9] + reg[17] which is 0 + 0 = 0
+
+Instruction number: 138
+add t3 t0 s5 
+reg[11] becomes reg[8] + reg[21] which is 0 + 0 = 0
+
+Instruction number: 139
+add s6 s0 t5 
+reg[22] becomes reg[16] + reg[13] which is 1 + 0 = 1
+
+Instruction number: 140
+lw t8 2623 s0
+lw operation
+
+Instruction number: 141
+add s0 t2 s6 
+reg[16] becomes reg[10] + reg[22] which is 2 + 1 = 3
+
+Instruction number: 142
+lw t5 806 s5
+lw operation
+
+Instruction number: 143
+sw t6 380 t3
+sw operation
+
+Instruction number: 144
+add s7 t6 t0 
+reg[23] becomes reg[14] + reg[8] which is 1 + 0 = 1
+
+Instruction number: 145
+sw s5 1736 t7
+sw operation
+
+Instruction number: 146
+lw s7 1148 t6
+lw operation
+
+Instruction number: 147
+lw t8 286 s2
+lw operation
+
+Instruction number: 148
+add s2 s3 t3 
+reg[18] becomes reg[19] + reg[11] which is 2 + 0 = 2
+
+Instruction number: 149
+sw t0 499 t5
+sw operation
+
+Instruction number: 150
+sw t7 2050 t5
+sw operation
+
+Instruction number: 151
+sw t2 241 t3
+sw operation
+
+Instruction number: 152
+lw s0 258 t9
+lw operation
+
+Instruction number: 153
+add t0 t6 t8 
+reg[8] becomes reg[14] + reg[24] which is 1 + 0 = 1
+
+Instruction number: 154
+lw t3 304 t3
+lw operation
+
+Instruction number: 155
+add t6 t4 t8 
+reg[14] becomes reg[12] + reg[24] which is 1 + 0 = 1
+
+Instruction number: 156
+add t3 s7 t8 
+reg[11] becomes reg[23] + reg[24] which is 0 + 0 = 0
+
+Instruction number: 157
+sw t5 202 s1
+sw operation
+
+Instruction number: 158
+add t1 t8 s7 
+reg[9] becomes reg[24] + reg[23] which is 0 + 0 = 0
+
+Instruction number: 159
+add t2 t6 s3 
+reg[10] becomes reg[14] + reg[19] which is 1 + 2 = 3
+
+Instruction number: 160
+add t9 s2 t9 
+reg[25] becomes reg[18] + reg[25] which is 2 + 1 = 3
+
+Instruction number: 161
+lw t8 1130 t7
+lw operation
+
+Instruction number: 162
+add t1 s7 t2 
+reg[9] becomes reg[23] + reg[10] which is 0 + 3 = 3
+
+Instruction number: 163
+add s5 t3 s7 
+reg[21] becomes reg[11] + reg[23] which is 0 + 0 = 0
+
+Instruction number: 164
+lw t2 2151 t3
+lw operation
+
+Instruction number: 165
+sw s1 1480 s1
+sw operation
+
+Instruction number: 166
+add s0 s3 t2 
+reg[16] becomes reg[19] + reg[10] which is 2 + 0 = 2
+
+Instruction number: 167
+lw t0 1099 t7
+lw operation
+
+Instruction number: 168
+sw t9 1365 s0
+sw operation
+
+Instruction number: 169
+sw t4 2963 s5
+sw operation
+
+Instruction number: 170
+lw s3 995 t4
+lw operation
+
+Instruction number: 171
+add t7 t0 t4 
+reg[15] becomes reg[8] + reg[12] which is 1 + 1 = 2
+
+Instruction number: 172
+lw t4 2915 s0
+lw operation
+
+Instruction number: 173
+lw s5 2640 t4
+lw operation
+
+Instruction number: 174
+add s5 s5 s4 
+reg[21] becomes reg[21] + reg[20] which is 0 + 2 = 2
+
+Instruction number: 175
+add s4 s3 t2 
+reg[20] becomes reg[19] + reg[10] which is 0 + 0 = 0
+
+Instruction number: 176
+add s0 s2 t5 
+reg[16] becomes reg[18] + reg[13] which is 2 + 1 = 3
+
+Instruction number: 177
+lw s1 158 t9
+lw operation
+
+Instruction number: 178
+add t5 s2 t9 
+reg[13] becomes reg[18] + reg[25] which is 2 + 3 = 5
+
+Instruction number: 179
+sw t2 1810 t3
+sw operation
+
+Instruction number: 180
+add t0 s6 t0 
+reg[8] becomes reg[22] + reg[8] which is 1 + 1 = 2
+
+Instruction number: 181
+sw s4 131 t5
+sw operation
+
+Instruction number: 182
+add s2 t4 t0 
+reg[18] becomes reg[12] + reg[8] which is 1 + 2 = 3
+
+Instruction number: 183
+add t7 t3 t0 
+reg[15] becomes reg[11] + reg[8] which is 0 + 2 = 2
+
+Instruction number: 184
+lw t6 4 t2
+lw operation
+
+Instruction number: 185
+add t8 t4 t0 
+reg[24] becomes reg[12] + reg[8] which is 1 + 2 = 3
+
+Instruction number: 186
+add t7 t6 s4 
+reg[15] becomes reg[14] + reg[20] which is 1 + 0 = 1
+
+Instruction number: 187
+lw t4 324 s3
+lw operation
+
+Instruction number: 188
+sw t5 1400 s5
+sw operation
+
+Instruction number: 189
+add t9 t4 t0 
+reg[25] becomes reg[12] + reg[8] which is 1 + 2 = 3
+
+Instruction number: 190
+lw s7 1375 s6
+lw operation
+
+Instruction number: 191
+lw t7 2261 t0
+lw operation
+
+Instruction number: 192
+add t0 t3 s2 
+reg[8] becomes reg[11] + reg[18] which is 0 + 3 = 3
+
+Instruction number: 193
+add s5 s2 s7 
+reg[21] becomes reg[18] + reg[23] which is 3 + 0 = 3
+
+Instruction number: 194
+add s4 s6 s4 
+reg[20] becomes reg[22] + reg[20] which is 1 + 0 = 1
+
+Instruction number: 195
+add t2 s2 t8 
+reg[10] becomes reg[18] + reg[24] which is 3 + 3 = 6
+
+Instruction number: 196
+sw s4 1020 s0
+sw operation
+
+Instruction number: 197
+add t6 t4 t5 
+reg[14] becomes reg[12] + reg[13] which is 1 + 5 = 6
+
+Instruction number: 198
+lw t7 2819 s5
+lw operation
+
+Instruction number: 199
+add s2 t1 t5 
+reg[18] becomes reg[9] + reg[13] which is 3 + 5 = 8
+
+Instruction number: 200
+lw t7 1409 s5
+lw operation
+
+Instruction number: 201
+sw t9 1278 t1
+sw operation
+
+Instruction number: 202
+sw t9 2994 s4
+sw operation
+
+Instruction number: 203
+lw s5 2372 t2
+lw operation
+
+Instruction number: 204
+add s6 t5 t9 
+reg[22] becomes reg[13] + reg[25] which is 5 + 3 = 8
+
+Instruction number: 205
+sw t7 2013 t9
+sw operation
+
+Instruction number: 206
+lw t2 2067 s5
+lw operation
+
+Instruction number: 207
+lw t9 1438 t7
+lw operation
+
+Instruction number: 208
+sw t6 2078 s3
+sw operation
+
+Instruction number: 209
+lw t4 1413 s6
+lw operation
+
+Instruction number: 210
+add t2 s2 t2 
+reg[10] becomes reg[18] + reg[10] which is 8 + 0 = 8
+
+Instruction number: 211
+lw t2 2847 t0
+lw operation
+
+Instruction number: 212
+add s3 s0 t7 
+reg[19] becomes reg[16] + reg[15] which is 3 + 0 = 3
+
+Instruction number: 213
+add t7 s3 s6 
+reg[15] becomes reg[19] + reg[22] which is 3 + 8 = 11
+
+Instruction number: 214
+add t7 t5 t9 
+reg[15] becomes reg[13] + reg[25] which is 5 + 0 = 5
+
+Instruction number: 215
+add s0 t9 s1 
+reg[16] becomes reg[25] + reg[17] which is 0 + 1 = 1
+
+Instruction number: 216
+add t0 t4 s3 
+reg[8] becomes reg[12] + reg[19] which is 0 + 3 = 3
+
+Instruction number: 217
+add s6 t9 t1 
+reg[22] becomes reg[25] + reg[9] which is 0 + 3 = 3
+
+Instruction number: 218
+lw s5 1636 s1
+lw operation
+
+Instruction number: 219
+lw s4 2302 s4
+lw operation
+
+Instruction number: 220
+add s4 t2 t1 
+reg[20] becomes reg[10] + reg[9] which is 0 + 3 = 3
+
+Instruction number: 221
+lw s3 1231 t7
+lw operation
+
+Instruction number: 222
+lw t3 268 s6
+lw operation
+
+Instruction number: 223
+sw s7 1739 t8
+sw operation
+
+Instruction number: 224
+lw s5 344 s1
+lw operation
+
+Instruction number: 225
+lw t9 1540 t8
+lw operation
+
+Instruction number: 226
+sw s6 2621 t5
+sw operation
+
+Instruction number: 227
+sw s0 2038 s4
+sw operation
+
+Instruction number: 228
+add s6 s4 t4 
+reg[22] becomes reg[20] + reg[12] which is 3 + 0 = 3
+
+Instruction number: 229
+add s2 t1 t9 
+reg[18] becomes reg[9] + reg[25] which is 3 + 0 = 3
+
+Instruction number: 230
+lw s1 2501 t0
+lw operation
+
+Instruction number: 231
+lw t2 888 s5
+lw operation
+
+Instruction number: 232
+lw s3 1430 s0
+lw operation
+
+Instruction number: 233
+add t9 s2 s4 
+reg[25] becomes reg[18] + reg[20] which is 3 + 3 = 6
+
+Instruction number: 234
+sw t3 118 s3
+sw operation
+
+Instruction number: 235
+add t3 s2 s7 
+reg[11] becomes reg[18] + reg[23] which is 3 + 0 = 3
+
+Instruction number: 236
+add t9 t8 t6 
+reg[25] becomes reg[24] + reg[14] which is 3 + 6 = 9
+
+Instruction number: 237
+sw t2 2630 s3
+sw operation
+
+Instruction number: 238
+add t2 s2 t0 
+reg[10] becomes reg[18] + reg[8] which is 3 + 3 = 6
+
+Instruction number: 239
+sw t0 255 s6
+sw operation
+
+Instruction number: 240
+add t1 t7 s5 
+reg[9] becomes reg[15] + reg[21] which is 5 + 0 = 5
+
+Instruction number: 241
+add s5 s5 t0 
+reg[21] becomes reg[21] + reg[8] which is 0 + 3 = 3
+
+Instruction number: 242
+add s4 t5 s7 
+reg[20] becomes reg[13] + reg[23] which is 5 + 0 = 5
+
+Instruction number: 243
+lw s5 360 s0
+lw operation
+
+Instruction number: 244
+sw s3 1297 s2
+sw operation
+
+Instruction number: 245
+add s6 t0 t5 
+reg[22] becomes reg[8] + reg[13] which is 3 + 5 = 8
+
+Instruction number: 246
+lw t7 1458 t6
+lw operation
+
+Instruction number: 247
+add t8 s0 s2 
+reg[24] becomes reg[16] + reg[18] which is 1 + 3 = 4
+
+Instruction number: 248
+sw s4 955 t4
+sw operation
+
+Instruction number: 249
+lw t2 435 t5
+lw operation
+
+Instruction number: 250
+lw t2 1948 t5
+lw operation
+
+Instruction number: 251
+lw t2 2129 s7
+lw operation
+
+Instruction number: 252
+sw s2 11 s5
+sw operation
+
+Instruction number: 253
+sw s7 1720 t2
+sw operation
+
+Instruction number: 254
+add t9 s4 s7 
+reg[25] becomes reg[20] + reg[23] which is 5 + 0 = 5
+
+Instruction number: 255
+add s6 t3 s3 
+reg[22] becomes reg[11] + reg[19] which is 3 + 1 = 4
+
+Instruction number: 256
+add s0 t8 t6 
+reg[16] becomes reg[24] + reg[14] which is 4 + 6 = 10
+
+Instruction number: 257
+lw s3 2766 t6
+lw operation
+
+Instruction number: 258
+lw s2 1896 t0
+lw operation
+
+Instruction number: 259
+add t9 s1 s6 
+reg[25] becomes reg[17] + reg[22] which is 1 + 4 = 5
+
+Instruction number: 260
+add s6 t9 t6 
+reg[22] becomes reg[25] + reg[14] which is 5 + 6 = 11
+
+Instruction number: 261
+sw t8 2203 t5
+sw operation
+
+Instruction number: 262
+add s3 t0 s2 
+reg[19] becomes reg[8] + reg[18] which is 3 + 1 = 4
+
+Instruction number: 263
+add s6 t7 t0 
+reg[22] becomes reg[15] + reg[8] which is 0 + 3 = 3
+
+Instruction number: 264
+add s7 s6 t2 
+reg[23] becomes reg[22] + reg[10] which is 3 + 0 = 3
+
+Instruction number: 265
+lw t3 928 t1
+lw operation
+
+Instruction number: 266
+add t3 t1 s5 
+reg[11] becomes reg[9] + reg[21] which is 5 + 0 = 5
+
+Instruction number: 267
+add t1 t3 t7 
+reg[9] becomes reg[11] + reg[15] which is 5 + 0 = 5
+
+Instruction number: 268
+add t8 t9 t5 
+reg[24] becomes reg[25] + reg[13] which is 5 + 5 = 10
+
+Instruction number: 269
+add s4 s2 t1 
+reg[20] becomes reg[18] + reg[9] which is 1 + 5 = 6
+
+Instruction number: 270
+sw s7 2753 s2
+sw operation
+
+Instruction number: 271
+lw s5 1586 t7
+lw operation
+
+Instruction number: 272
+sw t1 1266 t6
+sw operation
+
+Instruction number: 273
+lw t1 3055 t4
+lw operation
+
+Instruction number: 274
+sw t7 1686 s3
+sw operation
+
+Instruction number: 275
+add t9 s6 t4 
+reg[25] becomes reg[22] + reg[12] which is 3 + 0 = 3
+
+Instruction number: 276
+add t4 s1 t8 
+reg[12] becomes reg[17] + reg[24] which is 1 + 10 = 11
+
+Instruction number: 277
+add s4 t4 t4 
+reg[20] becomes reg[12] + reg[12] which is 11 + 11 = 22
+
+Instruction number: 278
+add t8 s5 t7 
+reg[24] becomes reg[21] + reg[15] which is 1 + 0 = 1
+
+Instruction number: 279
+lw s1 2473 s1
+lw operation
+
+Instruction number: 280
+add t0 t0 t1 
+reg[8] becomes reg[8] + reg[9] which is 3 + 1 = 4
+
+Instruction number: 281
+add s1 s2 t2 
+reg[17] becomes reg[18] + reg[10] which is 1 + 0 = 1
+
+Instruction number: 282
+sw s6 852 t9
+sw operation
+
+Instruction number: 283
+sw s6 2866 t6
+sw operation
+
+Instruction number: 284
+sw t7 1169 t0
+sw operation
+
+Instruction number: 285
+add s6 s4 s0 
+reg[22] becomes reg[20] + reg[16] which is 22 + 10 = 32
+
+Instruction number: 286
+add t5 t0 t6 
+reg[13] becomes reg[8] + reg[14] which is 4 + 6 = 10
+
+Instruction number: 287
+add s1 t7 t4 
+reg[17] becomes reg[15] + reg[12] which is 0 + 11 = 11
+
+Instruction number: 288
+lw s7 1496 t1
+lw operation
+
+Instruction number: 289
+lw s0 141 s5
+lw operation
+
+Instruction number: 290
+add t6 t9 t5 
+reg[14] becomes reg[25] + reg[13] which is 3 + 10 = 13
+
+Instruction number: 291
+add t9 t6 t8 
+reg[25] becomes reg[14] + reg[24] which is 13 + 1 = 14
+
+Instruction number: 292
+sw s3 382 t3
+sw operation
+
+Instruction number: 293
+sw s1 2686 t3
+sw operation
+
+Instruction number: 294
+add t5 s7 s5 
+reg[13] becomes reg[23] + reg[21] which is 0 + 1 = 1
+
+Instruction number: 295
+sw t6 998 t5
+sw operation
+
+Instruction number: 296
+sw t4 1614 s4
+sw operation
+
+Instruction number: 297
+add s7 s3 s3 
+reg[23] becomes reg[19] + reg[19] which is 4 + 4 = 8
+
+Instruction number: 298
+sw s2 1177 s0
+sw operation
+
+Instruction number: 299
+lw t3 527 t8
+lw operation
+
+Instruction number: 300
+sw s7 2602 t5
+sw operation
+
+Instruction number: 301
+add t3 t1 t3 
+reg[11] becomes reg[9] + reg[11] which is 1 + 1 = 2
+
+Instruction number: 302
+sw t7 65 t4
+sw operation
+
+Instruction number: 303
+add t5 s5 s5 
+reg[13] becomes reg[21] + reg[21] which is 1 + 1 = 2
+
+Instruction number: 304
+lw t5 3013 t2
+lw operation
+
+Instruction number: 305
+add s7 t4 t1 
+reg[23] becomes reg[12] + reg[9] which is 11 + 1 = 12
+
+Instruction number: 306
+add t2 s7 t5 
+reg[10] becomes reg[23] + reg[13] which is 12 + 0 = 12
+
+Instruction number: 307
+add s2 s5 t4 
+reg[18] becomes reg[21] + reg[12] which is 1 + 11 = 12
+
+Instruction number: 308
+sw t4 2066 t3
+sw operation
+
+Instruction number: 309
+add t3 t3 t3 
+reg[11] becomes reg[11] + reg[11] which is 2 + 2 = 4
+
+Instruction number: 310
+lw s1 175 s0
+lw operation
+
+Instruction number: 311
+sw t2 405 t2
+sw operation
+
+Instruction number: 312
+add t2 s6 s0 
+reg[10] becomes reg[22] + reg[16] which is 32 + 0 = 32
+
+Instruction number: 313
+sw s0 2321 s2
+sw operation
+
+Instruction number: 314
+add t8 t6 t9 
+reg[24] becomes reg[14] + reg[25] which is 13 + 14 = 27
+
+Instruction number: 315
+lw s3 1067 s7
+lw operation
+
+Instruction number: 316
+sw t0 2365 s5
+sw operation
+
+Instruction number: 317
+add t5 s3 s4 
+reg[13] becomes reg[19] + reg[20] which is 0 + 22 = 22
+
+Instruction number: 318
+lw s5 822 s3
+lw operation
+
+Instruction number: 319
+add t6 s7 s6 
+reg[14] becomes reg[23] + reg[22] which is 12 + 32 = 44
+
+Instruction number: 320
+add t9 t3 s2 
+reg[25] becomes reg[11] + reg[18] which is 4 + 12 = 16
+
+Instruction number: 321
+add t0 t1 s1 
+reg[8] becomes reg[9] + reg[17] which is 1 + 0 = 1
+
+Instruction number: 322
+add t8 t6 s5 
+reg[24] becomes reg[14] + reg[21] which is 44 + 1 = 45
+
+Instruction number: 323
+sw s0 1651 t6
+sw operation
+
+Instruction number: 324
+lw s5 1796 t1
+lw operation
+
+Instruction number: 325
+add s0 t6 s5 
+reg[16] becomes reg[14] + reg[21] which is 44 + 1 = 45
+
+Instruction number: 326
+add t0 t3 s1 
+reg[8] becomes reg[11] + reg[17] which is 4 + 0 = 4
+
+Instruction number: 327
+add s4 s7 t2 
+reg[20] becomes reg[23] + reg[10] which is 12 + 32 = 44
+
+Instruction number: 328
+sw s1 1623 t3
+sw operation
+
+Instruction number: 329
+sw s4 1685 t3
+sw operation
+
+Instruction number: 330
+add s4 t1 t7 
+reg[20] becomes reg[9] + reg[15] which is 1 + 0 = 1
+
+Instruction number: 331
+add s0 t8 s5 
+reg[16] becomes reg[24] + reg[21] which is 45 + 1 = 46
+
+Instruction number: 332
+sw t6 1640 t9
+sw operation
+
+Instruction number: 333
+lw t6 1756 s2
+lw operation
+
+Instruction number: 334
+add s2 t4 s0 
+reg[18] becomes reg[12] + reg[16] which is 11 + 46 = 57
+
+Instruction number: 335
+sw s3 948 t0
+sw operation
+
+Instruction number: 336
+add s3 s4 t6 
+reg[19] becomes reg[20] + reg[14] which is 1 + 1 = 2
+
+Instruction number: 337
+add s0 t1 t2 
+reg[16] becomes reg[9] + reg[10] which is 1 + 32 = 33
+
+Instruction number: 338
+sw t6 1259 t5
+sw operation
+
+Instruction number: 339
+sw t4 642 s3
+sw operation
+
+Instruction number: 340
+sw s0 2997 t8
+sw operation
+
+Instruction number: 341
+sw t3 2037 s7
+sw operation
+
+Instruction number: 342
+add s3 s4 t5 
+reg[19] becomes reg[20] + reg[13] which is 1 + 22 = 23
+
+Instruction number: 343
+lw s5 1982 t5
+lw operation
+
+Instruction number: 344
+add s5 t9 t0 
+reg[21] becomes reg[25] + reg[8] which is 16 + 4 = 20
+
+Instruction number: 345
+add t8 s2 t0 
+reg[24] becomes reg[18] + reg[8] which is 57 + 4 = 61
+
+Instruction number: 346
+sw t2 925 s2
+sw operation
+
+Instruction number: 347
+sw s3 668 s0
+sw operation
+
+Instruction number: 348
+sw t9 884 s5
+sw operation
+
+Instruction number: 349
+sw s6 1877 t3
+sw operation
+
+Instruction number: 350
+lw t8 1285 t6
+lw operation
+
+Instruction number: 351
+lw t3 3047 s1
+lw operation
+
+Instruction number: 352
+lw t3 153 t5
+lw operation
+
+Instruction number: 353
+add s5 s7 s7 
+reg[21] becomes reg[23] + reg[23] which is 12 + 12 = 24
+
+Instruction number: 354
+add t1 t1 s5 
+reg[9] becomes reg[9] + reg[21] which is 1 + 24 = 25
+
+Instruction number: 355
+sw s4 599 t4
+sw operation
+
+Instruction number: 356
+sw t9 2542 t2
+sw operation
+
+Instruction number: 357
+sw s4 1222 s3
+sw operation
+
+Instruction number: 358
+add s5 t9 s4 
+reg[21] becomes reg[25] + reg[20] which is 16 + 1 = 17
+
+Instruction number: 359
+add t7 t8 t3 
+reg[15] becomes reg[24] + reg[11] which is 0 + 0 = 0
+
+Instruction number: 360
+add t1 s7 t0 
+reg[9] becomes reg[23] + reg[8] which is 12 + 4 = 16
+
+Instruction number: 361
+add t1 t4 t4 
+reg[9] becomes reg[12] + reg[12] which is 11 + 11 = 22
+
+Instruction number: 362
+add t6 s3 s0 
+reg[14] becomes reg[19] + reg[16] which is 23 + 33 = 56
+
+Instruction number: 363
+lw s0 1840 t5
+lw operation
+
+Instruction number: 364
+add t5 t0 s6 
+reg[13] becomes reg[8] + reg[22] which is 4 + 32 = 36
+
+Instruction number: 365
+sw s4 1839 t6
+sw operation
+
+Instruction number: 366
+add t3 t1 s3 
+reg[11] becomes reg[9] + reg[19] which is 22 + 23 = 45
+
+Instruction number: 367
+add t8 t5 t1 
+reg[24] becomes reg[13] + reg[9] which is 36 + 22 = 58
+
+Instruction number: 368
+lw s7 2712 t2
+lw operation
+
+Instruction number: 369
+lw t8 2347 s7
+lw operation
+
+Instruction number: 370
+sw t5 731 t5
+sw operation
+
+Instruction number: 371
+add s6 t2 t4 
+reg[22] becomes reg[10] + reg[12] which is 32 + 11 = 43
+
+Instruction number: 372
+add t1 s3 t7 
+reg[9] becomes reg[19] + reg[15] which is 23 + 0 = 23
+
+Instruction number: 373
+lw s5 1195 t6
+lw operation
+
+Instruction number: 374
+add s1 t7 t9 
+reg[17] becomes reg[15] + reg[25] which is 0 + 16 = 16
+
+Instruction number: 375
+add t2 t7 t0 
+reg[10] becomes reg[15] + reg[8] which is 0 + 4 = 4
+
+Instruction number: 376
+add s5 t0 t3 
+reg[21] becomes reg[8] + reg[11] which is 4 + 45 = 49
+
+Instruction number: 377
+sw s1 2967 s4
+sw operation
+
+Instruction number: 378
+lw s5 2714 s5
+lw operation
+
+Instruction number: 379
+lw t8 1347 s1
+lw operation
+
+Instruction number: 380
+add t0 t5 t9 
+reg[8] becomes reg[13] + reg[25] which is 36 + 16 = 52
+
+Instruction number: 381
+lw s0 19 s4
+lw operation
+
+Instruction number: 382
+sw s4 1120 s4
+sw operation
+
+Instruction number: 383
+lw t2 942 t4
+lw operation
+
+Instruction number: 384
+add t3 t6 t8 
+reg[11] becomes reg[14] + reg[24] which is 56 + 0 = 56
+
+Instruction number: 385
+lw s4 2567 t3
+lw operation
+
+Instruction number: 386
+sw t3 440 s1
+sw operation
+
+Instruction number: 387
+sw t7 1513 t5
+sw operation
+
+Instruction number: 388
+add s7 s5 s6 
+reg[23] becomes reg[21] + reg[22] which is 0 + 43 = 43
+
+Instruction number: 389
+sw s4 1231 t3
+sw operation
+
+Instruction number: 390
+lw s0 990 t7
+lw operation
+
+Instruction number: 391
+sw t5 1097 s7
+sw operation
+
+Instruction number: 392
+lw t9 1327 t5
+lw operation
+
+Instruction number: 393
+add t0 t2 t3 
+reg[8] becomes reg[10] + reg[11] which is 1 + 56 = 57
+
+Instruction number: 394
+add s0 s2 t1 
+reg[16] becomes reg[18] + reg[9] which is 57 + 23 = 80
+
+Instruction number: 395
+lw t6 2901 t8
+lw operation
+
+Instruction number: 396
+lw t2 1870 s2
+lw operation
+
+Instruction number: 397
+sw s3 2210 t8
+sw operation
+
+Instruction number: 398
+add t8 t3 t0 
+reg[24] becomes reg[11] + reg[8] which is 56 + 57 = 113
+
+Instruction number: 399
+sw s2 1051 t5
+sw operation
+
+Instruction number: 400
+add t0 s6 s5 
+reg[8] becomes reg[22] + reg[21] which is 43 + 0 = 43
+
+Register values are
+reg[0] = 0
+reg[1] = 0
+reg[2] = 0
+reg[3] = 0
+reg[4] = 0
+reg[5] = 0
+reg[6] = 0
+reg[7] = 0
+reg[8] = 43
+reg[9] = 23
+reg[10] = 1
+reg[11] = 56
+reg[12] = 11
+reg[13] = 36
+reg[14] = 1
+reg[15] = 0
+reg[16] = 80
+reg[17] = 16
+reg[18] = 57
+reg[19] = 23
+reg[20] = 0
+reg[21] = 0
+reg[22] = 43
+reg[23] = 43
+reg[24] = 113
+reg[25] = 0
+reg[26] = 0
+reg[27] = 0
+reg[28] = 0
+reg[29] = 0
+reg[30] = 0
+reg[31] = 0
+Memory values are
+mem[0] = 0
+mem[1] = 1
+mem[2] = 1
+mem[3] = 1
+mem[4] = 1
+mem[5] = 0
+mem[6] = 0
+mem[7] = 1
+mem[8] = 0
+mem[9] = 1
+mem[10] = 0
+mem[11] = 3
+mem[12] = 1
+mem[13] = 1
+mem[14] = 1
+mem[15] = 0
+mem[16] = 1
+mem[17] = 1
+mem[18] = 0
+mem[19] = 1

@@ -1,0 +1,5 @@
+add t1 t2 t3
+sub t3 t2 t1
+sll t3 t3 10
+srl t2 t2 1
+sw t3 100 t1

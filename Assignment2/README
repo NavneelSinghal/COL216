@@ -1,0 +1,10 @@
+Program implemented: Tic Tac Toe game
+
+Implementation details:
+
+We have an infinite loop as the major part of the main body of a program which acts as the loop which works as the interactive part of the game.
+
+This loop first prints the player whose turn this is, and prompts the player to first give the row and column number in 0-indexing. Then it checks if the input is valid or not, and that works by checking if the row and column numbers we got are between 0 and 2 (both inclusive) or not, and if the square at that location is empty or not. In the case that the input is invalid, we ask the player to give a correct input till the player doesn't give a valid input.
+Then we change the player number, and mark the value of the player's placeholder on the board (it is 1 for the first player, 10 for the second player and 0 for no move). Now we check if there has been a 3-in-a-row/column/diagonal situation (by adding up numbers in a row/column/diagonal, and checking if any of them is 3 or 30). If someone has won, we jump to a label that indicates that by a message, and prints the final board and returns. 
+Then we check for a tie, which is checked in the end of the game, and that is done by checking if the sum of numbers on the board is 45 or not. If a tie has been reached, we jump to a label which indicates that and prints the final board and returns.
+Now in the case that none of the situations above have happened, we print the board, and then jump back to the loop.

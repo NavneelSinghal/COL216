@@ -1,0 +1,25 @@
+1. sw sw sw add add add
+2. lw lw lw add add add
+
+TODO-
+
+GENERATION DONE-
+
+TESTING DONE-
+
+stress tests using 1023 instructions - done but with 400 instructions, and memory set to all 0s (as offset issues are cropping up)
+using value just saved into memory again (using sw)
+using value just lw'ed
+test cases we used
+multiple permutations of {lw*3, add*3, sw*3}
+add into the same register
+sll and srl something negative (the source register value, not the shift)
+accessing something with negative register values
+access instruction memory
+
+FURTHER NOTES-
+
+sw and lw many times
+
+
+remember to submit the simulation as well - save the waveform

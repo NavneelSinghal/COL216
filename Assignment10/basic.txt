@@ -1,0 +1,3 @@
+add $s1 $zero $s3
+sub $s2 $zero $s3
+END_INSTRUCTIONS
