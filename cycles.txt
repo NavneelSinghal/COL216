@@ -1,0 +1,4 @@
+add 10
+sub 5
+sll 3
+srl 12
