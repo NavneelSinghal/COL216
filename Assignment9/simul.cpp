@@ -1,34 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define REP(i, n) for (int i = 0; i < n; ++i)
+#define REP(i, n) for(int i = 0; i < n; ++i)
 #define INSTRUCTION_NOT_FOUND 0
 
-int string_to_int(string s) {
+int cyc[13] = {0}; //for every instruction we store the number of clock cycles in this array
+
+int string_to_int(string s)
+{  
     int ans = 0;
-    int m = s.size() - 1;
-    for (int i = (int)s.size() - 1; i >= 0; i--) {
-        if (s[i] == '1') ans += (1) << (m - i);
+    int m = s.size()-1;
+    for(int i = (int)s.size() - 1; i >= 0; i--)
+    {
+        if(s[i]=='1')
+            ans += (1)<<(m-i);
     }
     return ans;
 }
 
-//---------------------------------------- STRUCTURE DEFINITIONS
-//---------------------------------------------
+//---------------------------------------- STRUCTURE DEFINITIONS ---------------------------------------------
 
-struct EX {
+struct EX{
+
     bool alu_src;
     int alu_op;
     bool reg_dst;
+
 };
 
-struct M {
+struct M{
+
     int mem_read;
     int mem_write;
     int branch;
+
 };
 
-struct WB {
+struct WB{
+
     int reg_write;
     bool mem_to_reg;
     bool isj;
@@ -36,48 +45,54 @@ struct WB {
     bool isjal;
     int cur_pc;
     string instr_last_26;
+
 };
 
-struct IF_ID {
+struct IF_ID{
+
     int pc;
-    string instruction;  // this is not the tokenised instruction, it is a 32
-                         // bit instruction
+    string instruction; //this is not the tokenised instruction, it is a 32 bit instruction
     string instr;
 
 } if_id;
 
-struct ID_EX {
+struct ID_EX{
+
     int pc;
     int read_data_1;
     int read_data_2;
 
-    string instruction;
+    pair<int,int> hazard;
 
+    string instruction;
+    
     string sign_extend;
     string instr_20_16;
     string instr_15_11;
-
+    
     WB wb;
     M m;
     EX ex;
 
 } id_ex;
 
-struct EX_MEM {
-    int write_register;  // mux
+struct EX_MEM{
+
+    int write_register; //mux
     int read_data_2;
     int alu_result;
     int zero;
     int add_result;
 
     string instruction;
-
+    
     WB wb;
     M m;
 
 } ex_mem;
 
-struct MEM_WB {
+struct MEM_WB{
+    
     int write_register;
     int alu_result;
     int write_data;
@@ -85,7 +100,7 @@ struct MEM_WB {
     int read_data;
 
     string instruction;
-
+    
     WB wb;
 
 } mem_wb;
@@ -98,8 +113,7 @@ int hazard_type;
 int cur_pc;
 int jump_to;
 int hazardBuffer[2];
-//--------------------------------------------- VARIABLES
-//----------------------------------------------------
+//--------------------------------------------- VARIABLES ----------------------------------------------------
 
 const int MAX_INSTR = 1e5;
 const int MAX_MEM = 1e7;
@@ -111,24 +125,29 @@ string cur_ins;
 string empty_instruction = "00000000000000000000000000000000";
 
 int mem[MAX_MEM] = {0};
-int regs[32] = {0};
+int regs[32] = {0}; 
 
-//-------------------------------- FUNCTIONS FOR RUNNING STAGES OF PIPELINE
-//----------------------------------
 
-// firstly assuming no hazards
+//-------------------------------- FUNCTIONS FOR RUNNING STAGES OF PIPELINE ----------------------------------
 
-// helper functions for control
-bool rformat(string s) { return (s.substr(0, 6).compare("000000") == 0); }
+//firstly assuming no hazards
 
-bool lw(string s) { return (s.substr(0, 6).compare("100011") == 0); }
+//helper functions for control
+bool rformat(string s){
+    return (s.substr(0,6).compare("000000") == 0);
+}
 
-bool sw(string s) { return (s.substr(0, 6).compare("101011") == 0); }
+bool lw(string s){
+    return (s.substr(0,6).compare("100011") == 0);
+}
 
-int control() {  // control returns the destination register number of the
-                 // innstruction
+bool sw(string s){
+    return (s.substr(0,6).compare("101011") == 0);
+}
 
-    if (!not_stall) {  // empty instruction
+int control(){ // control returns the destination register number of the innstruction
+    
+    if(!not_stall){ //empty instruction
 
         id_ex.ex.reg_dst = false;
         id_ex.ex.alu_op = 0;
@@ -147,18 +166,20 @@ int control() {  // control returns the destination register number of the
 
         id_ex.wb.instr_last_26 = if_id.instruction.substr(6, 26);
         return -1;
-    } else if (rformat(if_id.instruction)) {
+    }
+    else if(rformat(if_id.instruction)){
+
         id_ex.ex.reg_dst = true;
-        if (if_id.instruction.substr(26, 6).compare("100000") == 0)
+        if(if_id.instruction.substr(26,6).compare("100000") == 0) 
             id_ex.ex.alu_op = 5;
-        else if (if_id.instruction.substr(26, 6).compare("100010") == 0)
+        else if(if_id.instruction.substr(26,6).compare("100010") == 0) 
             id_ex.ex.alu_op = 6;
-        else if (if_id.instruction.substr(26, 6).compare("000000") == 0)
+        else if(if_id.instruction.substr(26,6).compare("000000") == 0) 
             id_ex.ex.alu_op = 7;
-        else if (if_id.instruction.substr(26, 6).compare("000010") == 0)
+        else if(if_id.instruction.substr(26,6).compare("000010") == 0) 
             id_ex.ex.alu_op = 8;
-        else if (if_id.instruction.substr(26, 6).compare("001000") == 0)
-            id_ex.ex.alu_op = 9;  // jr
+        else if(if_id.instruction.substr(26,6).compare("001000") == 0)
+            id_ex.ex.alu_op = 9; //jr
         else
             id_ex.ex.alu_op = 0;
 
@@ -167,8 +188,8 @@ int control() {  // control returns the destination register number of the
         id_ex.m.mem_read = 0;
         id_ex.m.mem_write = 0;
         id_ex.wb.reg_write = 1;
-        id_ex.m.branch = 0;
-        if (id_ex.ex.alu_op == 9)  // for jr
+        id_ex.m.branch = 0; 
+        if(id_ex.ex.alu_op == 9) // for jr
         {
             id_ex.wb.reg_write = 0;
             id_ex.m.branch = 1;
@@ -180,13 +201,14 @@ int control() {  // control returns the destination register number of the
         id_ex.wb.isjal = (id_ex.ex.alu_op == 11);
 
         id_ex.wb.instr_last_26 = if_id.instruction.substr(6, 26);
-        if (id_ex.wb.isjr)  // jr
+        if(id_ex.wb.isjr) // jr
             return -4;
         else
-            return string_to_int(if_id.instruction.substr(16, 5));
+            return string_to_int(if_id.instruction.substr(16,5)); 
     }
-
-    else if (lw(if_id.instruction)) {
+    
+    else if(lw(if_id.instruction)){
+        
         id_ex.ex.reg_dst = false;
         id_ex.ex.alu_op = 0;
         id_ex.ex.alu_src = true;
@@ -205,8 +227,9 @@ int control() {  // control returns the destination register number of the
         id_ex.wb.instr_last_26 = if_id.instruction.substr(6, 26);
         return -2;
     }
+    
+    else if(sw(if_id.instruction)){
 
-    else if (sw(if_id.instruction)) {
         id_ex.ex.alu_op = 0;
         id_ex.ex.alu_src = true;
 
@@ -224,21 +247,21 @@ int control() {  // control returns the destination register number of the
 
         return -1;
     }
+    
+    else{ //branch instruction
 
-    else {  // branch instruction
-
-        if (if_id.instruction.substr(0, 6).compare("000101") == 0)  // bne
+        if(if_id.instruction.substr(0,6).compare("000101") == 0) //bne
             id_ex.ex.alu_op = 1;
-        else if (if_id.instruction.substr(0, 6).compare("000110") == 0)  // blez
+        else if(if_id.instruction.substr(0,6).compare("000110") == 0) //blez
             id_ex.ex.alu_op = 3;
-        else if (if_id.instruction.substr(0, 6).compare("000111") == 0)  // bgtz
+        else if(if_id.instruction.substr(0,6).compare("000111") == 0) //bgtz
             id_ex.ex.alu_op = 4;
-        else if (if_id.instruction.substr(0, 6).compare("000100") == 0)  // beq
+        else if(if_id.instruction.substr(0,6).compare("000100") == 0) // beq
             id_ex.ex.alu_op = 2;
-        else if (if_id.instruction.substr(0, 6).compare("000010") == 0)
-            id_ex.ex.alu_op = 10;  // j
-        else if (if_id.instruction.substr(0, 6).compare("000011") == 0)
-            id_ex.ex.alu_op = 11;  // jal
+        else if(if_id.instruction.substr(0,6).compare("000010") == 0)
+            id_ex.ex.alu_op = 10; //j
+        else if(if_id.instruction.substr(0,6).compare("000011") == 0)
+            id_ex.ex.alu_op = 11;//jal
         else
             id_ex.ex.alu_op = 0;
 
@@ -248,146 +271,186 @@ int control() {  // control returns the destination register number of the
         id_ex.m.mem_write = 0;
         id_ex.m.branch = 1;
 
-        id_ex.wb.reg_write =
-            (id_ex.ex.alu_op == 11);  // we only write in the case of jal
+        id_ex.wb.reg_write = (id_ex.ex.alu_op == 11); //we only write in the case of jal
 
-        id_ex.wb.isj = (id_ex.ex.alu_op == 10);
+            id_ex.wb.isj = (id_ex.ex.alu_op == 10);
         id_ex.wb.isjr = (id_ex.ex.alu_op == 9);
         id_ex.wb.isjal = (id_ex.ex.alu_op == 11);
 
         id_ex.wb.instr_last_26 = if_id.instruction.substr(6, 26);
-        if (id_ex.ex.alu_op == 1 || id_ex.ex.alu_op == 3 ||
-            id_ex.ex.alu_op == 4 || id_ex.ex.alu_op == 2)
+        if(id_ex.ex.alu_op == 1 || id_ex.ex.alu_op == 3 || id_ex.ex.alu_op == 4 || id_ex.ex.alu_op == 2)
             return -100;
-        else if (id_ex.wb.isj) {
+        else if(id_ex.wb.isj)
+        {
             return -3;
-        } else if (id_ex.wb.isjal) {
-            return -5;
-        } else
+        }
+        else if(id_ex.wb.isjal)
+        {
+            return -5;            
+        }
+        else
             return 0;
     }
 }
 
-void IF(int i) {
-    if (!do_fetch) {
+void IF(int i){
+
+    if(!do_fetch)
+    { 
         if_id.pc = pc;
         if_id.instruction = empty_instruction;
-        if_id.instr = "stall";
+        if_id.instr =  "stall";
         cout << "IF stage instruction : stalling right now\n\n";
-        return;  // we don't want to fetch this instruction because right now we
-                 // go through a stall
+        return; //we don't want to fetch this instruction because right now we go through a stall 
     }
-    // while dealing with stalls, note that we do all this update only if the
-    // hazard is not present (look for more places where we do stuff like this)
-    // our plan is to keep a track of the current instruction - this will help
-    // with dealing with stalls as well as in the end when we run out of
-    // instructions
-
-    cout << "IF stage instruction : " << cur_ins << endl;
-    cout << endl;
+    //while dealing with stalls, note that we do all this update only if the hazard is not present (look for more places where we do stuff like this)
+    //our plan is to keep a track of the current instruction - this will help with dealing with stalls as well as in the end when we run out of instructions
+    
+    cout<<"IF stage instruction : "<<cur_ins<<endl;
+    cout<<endl;
 
     if_id.pc = i + 1;
     if_id.instruction = cur_instr;
     if_id.instr = cur_ins;
 
-    if (pc_src) {  // hazard here - @author - akash
-        // else
+    if(pc_src){ //hazard here - @author - akash
+        //else
         //{
-        // ex_mem.zero = 0;
+        //ex_mem.zero = 0;
         pc = ex_mem.add_result;
-    } else {
+    }
+    else{
         pc = pc + 1;
     }
 }
 
-int check_hazard(int rs, int rt,
-                 int rd)  // takes the rs,rt and rd of an arithmetic instruction
-                          // and determines no. of stalls if hazards is there or
-                          // no hazard is there
+// int check_hazard(int rs,int rt,int rd) // takes the rs,rt and rd of an arithmetic instruction and determines no. of stalls if hazards is there or no hazard is there
+// {
+//     if(rs==0 && rt==0 && rd==0) // empty instruction has no hazard whatsoever
+//         return 0;
+
+//     bool hazard = false;
+//     int i = 0;
+//     int ret_val;
+//     for(i=0;i<2;i++)
+//     {
+//         if(hazardBuffer[i]==-1 || hazardBuffer[i]==0)
+//             continue;
+//         if(hazardBuffer[i] == rs || hazardBuffer[i] == rt) 
+//         {
+//             hazard = true;
+//             ret_val = (i+1);
+//         }
+//     }
+//     if(hazard == false)
+//     {
+//         hazardBuffer[1] = hazardBuffer[0];
+//         hazardBuffer[0] = rd;
+//         return 0;
+//     }
+//     else
+//     {
+//         hazardBuffer[1] = hazardBuffer[0];
+//         hazardBuffer[0] = -1;
+//         return ret_val;
+//     }
+    
+// }
+
+pair<int,int> check_hazard(int rs,int rt,int rd) // takes the rs,rt and rd of an arithmetic instruction and determines no. of stalls if hazards is there or no hazard is there
 {
-    if (rs == 0 && rt == 0 &&
-        rd == 0)  // empty instruction has no hazard whatsoever
-        return 0;
+    if(rs==0 && rt==0 && rd==0) // empty instruction has no hazard whatsoever
+        return make_pair(0,0);
 
     bool hazard = false;
     int i = 0;
-    int ret_val;
-    for (i = 0; i < 2; i++) {
-        if (hazardBuffer[i] == -1 || hazardBuffer[i] == 0) continue;
-        if (hazardBuffer[i] == rs || hazardBuffer[i] == rt) {
+    int ret_val1=0;
+    int ret_val2=0;
+
+    // encoding used retval1 - 0,10,20 for hazards and 0 for no hazards
+    // encoding used retval2 - 0,10,20
+    
+    // note i goes from 1 to 0, because if its true for i=0 and 1 then we need i=0 to be selected
+    for(i=1;i>=0;i--)
+    {
+        if(hazardBuffer[i]==-1 || hazardBuffer[i]==0)
+            continue;
+        if(hazardBuffer[i] == rs) 
+        {
             hazard = true;
-            ret_val = (i + 1);
+            ret_val1 = 10*(i+1);
+
+        }
+        if(hazardBuffer[i] == rt)
+        {
+            hazard = true;
+            ret_val2 = 10*(i+1);
         }
     }
-    if (hazard == false) {
-        hazardBuffer[1] = hazardBuffer[0];
-        hazardBuffer[0] = rd;
-        return 0;
-    } else {
-        hazardBuffer[1] = hazardBuffer[0];
-        hazardBuffer[0] = -1;
-        return ret_val;
-    }
+
+    pair<int,int> p = make_pair(ret_val1,ret_val2);
+
+    // no more stalling 
+    hazardBuffer[1] = hazardBuffer[0];
+    hazardBuffer[0] = rd;
+
+    return p;
+    // if(hazard == false)
+    // {
+    //     return 0;
+    // }
+    // else
+    // {
+    //     return p;
+    // }
+    
 }
 
-int ID() {
-    do_fetch = 1;
+int ID(){
+    do_fetch =1;
     not_stall = true;
-    int rs, rt, rd, hz;
+    int rs,rt,rd;
     bool jr = false;
     bool jal = false;
-    rs = string_to_int(if_id.instruction.substr(6, 5));
-    rt = string_to_int(if_id.instruction.substr(11, 5));
+    rs =  string_to_int(if_id.instruction.substr(6, 5));
+    rt =  string_to_int(if_id.instruction.substr(11, 5));
 
-    rd = control();  // if rd is -100 its is  branch instruction, for r format
-                     // instruction the destination register number is returned
+     
+    rd = control(); // if rd is -100 its is  branch instruction, for r format instruction the destination register number is returned
 
-    if (rd == -2 ||
-        rd == -4)  // this is lw or jr, where there is only one dependency
+    if(rd==-2 || rd == -4) // this is lw or jr, where there is only one dependency
     {
-        rt = -1;  // as rt becomes dest and only rs is a dependency
+        rt = -1; // as rt becomes dest and only rs is a dependency
 
-        if (rd == -4) jr = true;
+        if(rd==-4)
+            jr = true;
 
-        rd = string_to_int(if_id.instruction.substr(11, 5));
+        rd = string_to_int(if_id.instruction.substr(11,5));
     }
-    if (rd == -3)  // this is for j
+    if(rd==-3) // this is for j
     {
         rs = -1;
-        rt = -1;  // j have no dependencies
+        rt = -1; // j have no dependencies
     }
-    if (rd == -5)  // this for jal as writes into register 31;
+    if(rd==-5) // this for jal as writes into register 31;
     {
         rs = -1;
         rt = -1;
         rd = 31;
         jal = true;
-    }
+    } 
     id_ex.instruction = if_id.instr;
-    hz = check_hazard(rs, rt, rd);
+    pair<int,int> hz = check_hazard(rs,rt,rd);
 
-    if (hz == 1)  // data hazard or control hazard
+    id_ex.hazard = hz;
+
+    if(hz.first == 10 && ex_mem.m.mem_read) // stall for lw
     {
         id_ex.instr_15_11 = "00000";
         id_ex.instr_20_16 = "00000";
         id_ex.sign_extend = "00000000000000000000000000000000";
         id_ex.read_data_1 = 0;
-        id_ex.read_data_2 = 0;
-        id_ex.instruction = "stall";
-
-        not_stall = false;
-        control();
-
-        do_fetch = 0;
-
-        return 2;
-    }
-    if (hz == 2) {
-        id_ex.instr_15_11 = "00000";
-        id_ex.instr_20_16 = "00000";
-        id_ex.sign_extend = "00000000000000000000000000000000";
-        id_ex.read_data_1 = 0;
-        id_ex.read_data_2 = 0;
+        id_ex.read_data_2  =0;
         id_ex.instruction = "stall";
 
         not_stall = false;
@@ -395,75 +458,137 @@ int ID() {
 
         return 1;
     }
-    if (rd == -100) {
+
+    // if(hz ==1) // data hazard or control hazard
+    // {
+    //     id_ex.instr_15_11 = "00000";
+    //     id_ex.instr_20_16 = "00000";
+    //     id_ex.sign_extend = "00000000000000000000000000000000";
+    //     id_ex.read_data_1 = 0;
+    //     id_ex.read_data_2  =0;
+    //     id_ex.instruction = "stall";
+
+    //     not_stall = false;
+    //     control();
+
+    //     do_fetch = 0;
+        
+    //     return 2;
+    // }  
+    // if(hz == 2)
+    // {
+    //     id_ex.instr_15_11 = "00000";
+    //     id_ex.instr_20_16 = "00000";
+    //     id_ex.sign_extend = "00000000000000000000000000000000";
+    //     id_ex.read_data_1 = 0;
+    //     id_ex.read_data_2  =0;
+    //     id_ex.instruction = "stall";
+
+    //     not_stall = false;
+    //     control();
+
+    //     return 1;
+    // }
+    if(rd==-100)
+    {
         do_fetch = 0;
     }
 
     id_ex.pc = if_id.pc;
 
-    if (rs != -1) id_ex.read_data_1 = regs[rs];
-    if (rt != -1) id_ex.read_data_2 = regs[rt];
+    if(rs != -1) id_ex.read_data_1 = regs[rs];
+    if(rt != -1) id_ex.read_data_2 = regs[rt];
 
-    // this needs to be done in WB, done.
-    // if(mem_wb.reg_write) regs[mem_wb.write_register] = mem_wb.write_data;
+
+    //this needs to be done in WB, done.
+    //if(mem_wb.reg_write) regs[mem_wb.write_register] = mem_wb.write_data;
 
     id_ex.sign_extend = if_id.instruction.substr(16, 16);
     string extend = "";
-    for (int i = 0; i < 16; i++) extend += if_id.instruction[16];
+    for(int i = 0; i < 16; i++) extend += if_id.instruction[16];
     id_ex.sign_extend = extend + id_ex.sign_extend;
-
+    
     id_ex.instr_20_16 = if_id.instruction.substr(11, 5);
     id_ex.instr_15_11 = if_id.instruction.substr(16, 5);
 
-    cout << "ID stage instruction : " << if_id.instr << endl;
+    cout<<"ID stage instruction : "<<if_id.instr<<endl;
 
-    // now initialise the wb, m, ex of id_ex - work of control unit - done
-    // ex - alu_src, alu_op, reg_dst
-    // m - mem_read, mem_write, branch
-    // wb - reg_write, mem_to_reg
+    //now initialise the wb, m, ex of id_ex - work of control unit - done
+    //ex - alu_src, alu_op, reg_dst
+    //m - mem_read, mem_write, branch
+    //wb - reg_write, mem_to_reg
 
-    if (rd == -100)
-        return 3;              // 3 - implies branch
-    else if (rd == -3 || jal)  // j or jal
+    if(rd==-100)
+        return 3; // 3 - implies branch
+    else if(rd == -3 || jal) // j or jal
     {
         jump_to = string_to_int(id_ex.wb.instr_last_26);
-        cout << "Jump to instruction no. : " << jump_to << endl;
-        return 4;   // 4 - implies jump
-    } else if (jr)  // jr
+        cout<<"Jump to instruction no. : "<<jump_to<<endl;
+        return 4; // 4 - implies jump
+    }
+    else if(jr) // jr
     {
-        jump_to = regs[rs];
-        cout << "Jump to instruction no. : " << jump_to << endl;
+        jump_to = regs[rs]; 
+        cout<<"Jump to instruction no. : "<<jump_to<<endl;
         return 4;
-    } else {
-        return 0;  // 0 - implies no hazard
+    }
+    else
+    {
+        return 0; // 0 - implies no hazard
     }
 }
 
-int EX() {  // i is the program counter, its needed for jal
+int EX(){ // i is the program counter, its needed for jal
+
+        // forwarding
+    if(id_ex.hazard.first == 10)
+    {
+        cout << "Forwarding happended" << endl;
+        id_ex.read_data_1 = ex_mem.alu_result;
+    }
+    if(id_ex.hazard.second == 10)
+    {
+        cout << "Forwarding happended" << endl;
+        id_ex.read_data_2 = ex_mem.alu_result;
+    }
+
+    // Since we are executing in reverse order, value in ex_mem.alu_result
+    // is pushed into mem_wb.alu_result, so they contain same value
+
+    if(id_ex.hazard.first == 20)
+    {
+        cout << "Forwarding happended" << endl;
+        //id_ex.read_data_1 = mem_wb.alu_result;
+        id_ex.read_data_1 = mem_wb.write_data;
+    }
+    if(id_ex.hazard.second == 20)
+    {
+        cout << "Forwarding happended" << endl;
+        //id_ex.read_data_2 = mem_wb.alu_result;
+        id_ex.read_data_2 = mem_wb.write_data;
+    }
+    
+
     int offset = string_to_int(id_ex.sign_extend);
 
-    cout << "EX stage instruction : " << id_ex.instruction << endl;
+    cout<<"EX stage instruction : "<<id_ex.instruction<<endl;
 
-    if (id_ex.wb.isj || id_ex.wb.isjal) {
-        ex_mem.add_result = string_to_int(
-            id_ex.wb.instr_last_26);  // last 26 bits of the instruction
-    } else if (id_ex.wb.isjr) {
-        ex_mem.add_result = id_ex.read_data_1;  // rs
-    } else {
-        ex_mem.add_result =
-            id_ex.pc + offset +
-            1;  // check if this int can be negative or not - done @akash
+    if(id_ex.wb.isj || id_ex.wb.isjal){
+        ex_mem.add_result = string_to_int(id_ex.wb.instr_last_26); //last 26 bits of the instruction
+    }
+    else if(id_ex.wb.isjr){
+        ex_mem.add_result = id_ex.read_data_1; //rs
+    }
+    else{
+        ex_mem.add_result = id_ex.pc + offset+1; //check if this int can be negative or not - done @akash
     }
 
     int alu_operand_1 = id_ex.read_data_1;
-    int alu_operand_2 = (id_ex.ex.alu_src) ? string_to_int(id_ex.sign_extend)
-                                           : id_ex.read_data_2;
-    int shift_amt = (string_to_int(id_ex.sign_extend.substr(21, 5)));
-
+    int alu_operand_2 = (id_ex.ex.alu_src) ? string_to_int(id_ex.sign_extend) : id_ex.read_data_2;
+    int shift_amt = (string_to_int(id_ex.sign_extend.substr(21,5)));
+    
     ex_mem.read_data_2 = id_ex.read_data_2;
-    ex_mem.write_register = (id_ex.ex.reg_dst)
-                                ? string_to_int(id_ex.instr_15_11)
-                                : string_to_int(id_ex.instr_20_16);
+    ex_mem.write_register = (id_ex.ex.reg_dst) ? string_to_int(id_ex.instr_15_11) : string_to_int(id_ex.instr_20_16);
 
     ex_mem.instruction = id_ex.instruction;
 
@@ -472,206 +597,207 @@ int EX() {  // i is the program counter, its needed for jal
 
     ex_mem.zero = 0;
 
-    // TODO: find what alu should do, using the aluop and last 6 bits of
-    // id_ex.sign_extend or something - work of the alu control unit - DONE
-    if (id_ex.ex.alu_op == 0)  // sw or lw
+    //TODO: find what alu should do, using the aluop and last 6 bits of id_ex.sign_extend or something - work of the alu control unit - DONE
+    if(id_ex.ex.alu_op == 0) //sw or lw
     {
         ex_mem.alu_result = alu_operand_1 + alu_operand_2;
-    } else if (id_ex.ex.alu_op == 1)  // bne
-    {
-        if (id_ex.read_data_1 != id_ex.read_data_2) {
+    }
+    else if(id_ex.ex.alu_op == 1) // bne
+    {      
+        if(id_ex.read_data_1 != id_ex.read_data_2)
+        {
             ex_mem.zero = 1;
-        } else {
+        }
+        else
+        {
+            ex_mem.zero = 0;
+        }        
+    }
+    else if(id_ex.ex.alu_op == 2) // beq
+    {
+        if(alu_operand_2 == alu_operand_1)
+        {
+            ex_mem.zero = 1;
+        }
+        else
+        {
             ex_mem.zero = 0;
         }
-    } else if (id_ex.ex.alu_op == 2)  // beq
+    }
+    else if(id_ex.ex.alu_op == 3) // blez
     {
-        if (alu_operand_2 == alu_operand_1) {
+        if(alu_operand_1 <= 0)
+            {
+                ex_mem.zero = 1;
+            }
+        else
+            {
+                ex_mem.zero = 0;
+            }
+    }
+    else if(id_ex.ex.alu_op == 4) // bgtz
+    {
+        if(alu_operand_1 > 0)
+        {
             ex_mem.zero = 1;
-        } else {
+        }
+        else
+        {
             ex_mem.zero = 0;
         }
-    } else if (id_ex.ex.alu_op == 3)  // blez
-    {
-        if (alu_operand_1 <= 0) {
-            ex_mem.zero = 1;
-        } else {
-            ex_mem.zero = 0;
-        }
-    } else if (id_ex.ex.alu_op == 4)  // bgtz
-    {
-        if (alu_operand_1 > 0) {
-            ex_mem.zero = 1;
-        } else {
-            ex_mem.zero = 0;
-        }
-    } else if (id_ex.ex.alu_op == 5)  // add
+    }
+    else if(id_ex.ex.alu_op == 5) // add
     {
         ex_mem.alu_result = alu_operand_1 + alu_operand_2;
-    } else if (id_ex.ex.alu_op == 6)  // sub
+    }
+    else if(id_ex.ex.alu_op == 6) // sub
     {
         ex_mem.alu_result = alu_operand_1 - alu_operand_2;
-    } else if (id_ex.ex.alu_op == 7)  // sll
+    }
+    else if(id_ex.ex.alu_op == 7) // sll
     {
         ex_mem.alu_result = alu_operand_2 << shift_amt;
-    } else if (id_ex.ex.alu_op == 8)  // srl
+    }
+    else if(id_ex.ex.alu_op == 8)// srl
     {
-        ex_mem.alu_result = alu_operand_2 >> shift_amt;
-    } else if (id_ex.ex.alu_op == 9) {  // jr
-        ex_mem.zero = 1;
-    } else if (id_ex.ex.alu_op == 10) {  // j
-        ex_mem.zero = 1;
-    } else if (id_ex.ex.alu_op == 11) {  // jal
-        ex_mem.wb.cur_pc = id_ex.pc;
+        ex_mem.alu_result = alu_operand_2 >> shift_amt; 
+    }
+    else if(id_ex.ex.alu_op == 9){//jr
         ex_mem.zero = 1;
     }
-    if ((id_ex.ex.alu_op == 1 || id_ex.ex.alu_op == 2 || id_ex.ex.alu_op == 3 ||
-         id_ex.ex.alu_op == 4) &&
-        (ex_mem.zero && ex_mem.m.branch)) {
-        cout << "Branch condition is true  so pc is now " << (cur_pc + offset)
-             << endl;
+    else if(id_ex.ex.alu_op == 10){//j
+        ex_mem.zero = 1;
+    }
+    else if(id_ex.ex.alu_op == 11){//jal
+        ex_mem.wb.cur_pc  = id_ex.pc;
+        ex_mem.zero = 1;
+    }
+    if((id_ex.ex.alu_op ==1 || id_ex.ex.alu_op==2  || id_ex.ex.alu_op==3 || id_ex.ex.alu_op ==4) && (ex_mem.zero && ex_mem.m.branch) ){
+        cout<<"Branch condition is true  so pc is now "<<(cur_pc + offset)<<endl;
         return offset;
-    } else {
+    }
+    else
+    {
         return -1;
     }
 }
 
-void MEM() {
-    // need to check if this needs to be done in the instruction fetch or here
-    // we plan to do everything (all the stages of the pipeline) in the reverse
-    // order to avoid overwriting, so if we do this here, then we probably dont
-    // have an issue
-    cout << "MEM stage instruction : " << ex_mem.instruction << endl;
+void MEM(){
 
+    //need to check if this needs to be done in the instruction fetch or here
+    //we plan to do everything (all the stages of the pipeline) in the reverse order to avoid overwriting, so if we do this here, then we probably dont have an issue
+    cout<<"MEM stage instruction : "<<ex_mem.instruction<<endl;
+    
     pc_src = ex_mem.zero && ex_mem.m.branch;
 
     mem_wb.instruction = ex_mem.instruction;
-
-    if (ex_mem.m.mem_read) {
+    
+    if(ex_mem.m.mem_read){
         mem_wb.read_data = mem[ex_mem.alu_result];
-    } else {
+    }
+    else{
         mem_wb.read_data = 0;
     }
 
-    if (ex_mem.m.mem_write) {
-        cout << "mem[" << ex_mem.alu_result << "] becomes "
-             << ex_mem.read_data_2 << endl;
+    if(ex_mem.m.mem_write){
+        cout << "mem["<<ex_mem.alu_result<<"] becomes "<<ex_mem.read_data_2<<endl;
         mem[ex_mem.alu_result] = ex_mem.read_data_2;
     }
 
-    mem_wb.alu_result =
-        (!ex_mem.wb.isjal) ? ex_mem.alu_result : ex_mem.wb.cur_pc;
+    mem_wb.alu_result = (!ex_mem.wb.isjal) ? ex_mem.alu_result : ex_mem.wb.cur_pc;
     mem_wb.write_register = (!ex_mem.wb.isjal) ? ex_mem.write_register : 31;
-
-    // casual TODO: can we do this^ in previous stages too by doing this change
-    // in the previous stage itself? (only for minimising the number of stalls,
-    //not relevant now, remember that premature optimization is the root cause
-    //of all evil)
+    
+    //casual TODO: can we do this^ in previous stages too by doing this change in the previous stage itself? 
+    //(only for minimising the number of stalls, not relevant now, remember that premature optimization is the root cause of all evil)
 
     mem_wb.wb = ex_mem.wb;
 }
 
-void WB() {
-    cout << "WB stage instruction : " << mem_wb.instruction << endl;
+void WB(){
+    cout << "WB stage instruction : "<<mem_wb.instruction<<endl;
 
-    mem_wb.write_data =
-        (mem_wb.wb.mem_to_reg) ? mem_wb.read_data : mem_wb.alu_result;
 
-    // changed because write back happens in write back and not in the
-    // instruction decode stage
-    if (mem_wb.wb.reg_write) {
-        regs[mem_wb.write_register] =
-            mem_wb.write_data;  // possible hazard - @author - akash
-        cout << "reg[" << mem_wb.write_register << "] becomes "
-             << mem_wb.write_data << endl;
+    mem_wb.write_data = (mem_wb.wb.mem_to_reg) ? mem_wb.read_data : mem_wb.alu_result;
+
+    //changed because write back happens in write back and not in the instruction decode stage
+    if(mem_wb.wb.reg_write) 
+    {regs[mem_wb.write_register] = mem_wb.write_data; //possible hazard - @author - akash
+        cout<<"reg["<<mem_wb.write_register<<"] becomes "<<mem_wb.write_data<<endl;
     }
 }
 
-//------------------------------------- HELPER FUNCTIONS FOR PARSING
-//-----------------------------------------
 
-void replace(string& s, char a, char b) {
-    REP(i, (int)s.size()) {
-        if (s[i] == a) s[i] = b;
+//------------------------------------- HELPER FUNCTIONS FOR PARSING -----------------------------------------
+
+void replace(string &s, char a, char b){
+    REP(i, (int) s.size()){
+        if(s[i] == a) s[i] = b;
     }
 }
 
-int regint(string reg) {
-    if (reg[0] == '$') {
+int regint(string reg){
+    if(reg[0] == '$'){
         reg = reg.substr(1);
     }
-    if (reg == "zero")
-        return 0;
-    else if (reg == "at")
-        return 1;
-    else if (reg[0] == 'v')
-        return 2 + reg[1] - '0';
-    else if (reg[0] == 'a')
-        return 4 + reg[1] - '0';
-    else if (reg[0] == 't' && reg[1] < '8')
-        return 8 + reg[1] - '0';
-    else if (reg[0] == 't')
-        return 24 + reg[1] - '8';
-    else if (reg == "sp")
-        return 29;
-    else if (reg[0] == 's')
-        return 16 + reg[1] - '0';
-    else if (reg[0] == 'k')
-        return 26 + reg[1] - '0';
-    else if (reg == "gp")
-        return 28;
-    else if (reg == "fp")
-        return 30;
-    else if (reg == "ra")
-        return 31;
-    else
-        return stoi(reg);
+    if(reg == "zero") return 0;
+    else if(reg == "at") return 1;
+    else if(reg[0] == 'v') return 2 + reg[1] - '0';
+    else if(reg[0] == 'a') return 4 + reg[1] - '0';
+    else if(reg[0] == 't' && reg[1] < '8') return 8 + reg[1] - '0';
+    else if(reg[0] == 't') return 24 + reg[1] - '8';
+    else if(reg == "sp") return 29;
+    else if(reg[0] == 's') return 16 + reg[1] - '0';
+    else  if(reg[0] == 'k') return 26 + reg[1] - '0';
+    else if(reg == "gp") return 28;
+    else if(reg == "fp") return 30;
+    else if(reg == "ra") return 31;
+    else return stoi(reg);
 }
 
-string regtostring(string reg) {
+string regtostring(string reg){
     int num = regint(reg);
     string w(5, '0');
-    for (int i = 4; i >= 0; i--) {
-        w[i] += (num & 1);
+    for(int i = 4; i >= 0; i--){
+        w[i] += (num&1);
         num >>= 1;
     }
     return w;
 }
 
-string inttobin(int num) {
+string inttobin(int num){
     string w(5, '0');
-    for (int i = 4; i >= 0; i--) {
-        w[i] += (num & 1);
+    for(int i = 4; i >= 0; i--){
+        w[i] += (num&1);
         num >>= 1;
     }
     return w;
 }
 
-string inttobin16(int num) {
+string inttobin16(int num){
     string w(16, '0');
-    for (int i = 15; i >= 0; i--) {
-        w[i] += (num & 1);
+    for(int i = 15; i >= 0; i--){
+        w[i] += (num&1);
         num >>= 1;
     }
     return w;
 }
 
-string inttobin32(int num) {
+string inttobin32(int num){
     string w(32, '0');
-    for (int i = 31; i >= 0; i--) {
-        w[i] += (num & 1);
+    for(int i = 31; i >= 0; i--){
+        w[i] += (num&1);
         num >>= 1;
     }
     return w;
 }
 
-string instruction_to_32(string instr) {
+string instruction_to_32(string instr){
     string shift, offset;
     string reg[3];
     stringstream in(instr);
     getline(in, instr, ' ');
     string out;
-    if (instr == "add") {
+    if(instr == "add"){
         out += "000000";
         getline(in, reg[2], ' ');
         getline(in, reg[0], ' ');
@@ -681,7 +807,8 @@ string instruction_to_32(string instr) {
         out += regtostring(reg[2]);
         out += "00000";
         out += "100000";
-    } else if (instr == "sub") {
+    }
+    else if(instr == "sub"){
         out += "000000";
         getline(in, reg[2], ' ');
         getline(in, reg[0], ' ');
@@ -691,7 +818,8 @@ string instruction_to_32(string instr) {
         out += regtostring(reg[2]);
         out += "00000";
         out += "100010";
-    } else if (instr == "lw") {
+    }
+    else if(instr == "lw"){
         out += "100011";
         getline(in, reg[1], ' ');
         getline(in, offset, ' ');
@@ -699,7 +827,8 @@ string instruction_to_32(string instr) {
         out += regtostring(reg[0]);
         out += regtostring(reg[1]);
         out += inttobin16(stoi(offset));
-    } else if (instr == "sw") {
+    }
+    else if(instr == "sw"){
         out += "101011";
         getline(in, reg[1], ' ');
         getline(in, offset, ' ');
@@ -707,7 +836,8 @@ string instruction_to_32(string instr) {
         out += regtostring(reg[0]);
         out += regtostring(reg[1]);
         out += inttobin16(stoi(offset));
-    } else if (instr == "sll") {
+    }
+    else if(instr == "sll"){
         out += "000000";
         out += "00000";
         getline(in, reg[1], ' ');
@@ -716,7 +846,8 @@ string instruction_to_32(string instr) {
         out += (regtostring(reg[0]) + regtostring(reg[1]));
         out += inttobin(stoi(shift));
         out += "000000";
-    } else if (instr == "srl") {
+    }
+    else if(instr == "srl"){
         out += "000000";
         out += "00000";
         getline(in, reg[1], ' ');
@@ -725,24 +856,28 @@ string instruction_to_32(string instr) {
         out += (regtostring(reg[0]) + regtostring(reg[1]));
         out += inttobin(stoi(shift));
         out += "000010";
-    } else if (instr == "j") {
+    }
+    else if(instr == "j"){
         out += "000010";
         out += "0000000000";
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "jr") {
+    }
+    else if(instr == "jr"){
         out += "000000";
         string r;
         getline(in, r, ' ');
         out += regtostring(r);
         out += "000000000000000";
         out += "001000";
-    } else if (instr == "jal") {
+    }
+    else if(instr == "jal"){
         out += "000011";
         out += "0000000000";
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "bne") {
+    }
+    else if(instr == "bne"){
         out += "000101";
         string r;
         getline(in, r, ' ');
@@ -751,7 +886,8 @@ string instruction_to_32(string instr) {
         out += regtostring(r);
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "beq") {
+    }
+    else if(instr == "beq"){
         out += "000100";
         string r;
         getline(in, r, ' ');
@@ -760,7 +896,8 @@ string instruction_to_32(string instr) {
         out += regtostring(r);
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "blez") {
+    }
+    else if(instr == "blez"){
         out += "000110";
         string r;
         getline(in, r, ' ');
@@ -768,7 +905,8 @@ string instruction_to_32(string instr) {
         out += "00000";
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "bgtz") {
+    }
+    else if(instr == "bgtz"){
         out += "000111";
         string r;
         getline(in, r, ' ');
@@ -776,13 +914,16 @@ string instruction_to_32(string instr) {
         out += "00000";
         getline(in, offset, ' ');
         out += inttobin16(stoi(offset));
-    } else if (instr == "END") {
-        for (int i = 0; i < 32; i++) out += "0";
+    }
+    else if(instr == "END"){
+        for(int i = 0; i < 32; i++) out += "0";
     }
     return out;
 }
 
-void init() {
+
+void init()
+{
     if_id.pc = 0;
     if_id.instruction = empty_instruction;
     if_id.instr = "stall";
@@ -793,19 +934,20 @@ void init() {
     id_ex.sign_extend = empty_instruction;
     id_ex.instr_20_16 = "00000";
     id_ex.instr_15_11 = "00000";
-    id_ex.wb = {0, false};
-    id_ex.m = {0, 0, 0};
+    id_ex.wb = {0,false};
+    id_ex.m = {0,0,0};
     id_ex.instruction = "stall";
-    id_ex.ex = {false, 0, false};
+    id_ex.ex = {false,0,false};
 
     ex_mem.write_register = 0;
     ex_mem.read_data_2 = 0;
     ex_mem.alu_result = 0;
     ex_mem.zero = 0;
-    ex_mem.add_result = 0;
-    ex_mem.wb = {0, false};
-    ex_mem.m = {0, 0, 0};
-    ex_mem.instruction = "stall";
+    ex_mem.add_result  =0;
+    ex_mem.wb = {0,false};
+    ex_mem.m = {0,0,0};
+    ex_mem.instruction= "stall";
+
 
     mem_wb.write_register = 0;
     mem_wb.alu_result = 0;
@@ -813,97 +955,134 @@ void init() {
     mem_wb.reg_write = 0;
     mem_wb.read_data = 0;
     mem_wb.instruction = "stall";
-    mem_wb.wb = {0, false};
+    mem_wb.wb = {0,false};
 
     pc_src = 0;
     do_fetch = true;
     not_stall = true;
-    pc = 0;
+    pc=0;
 
     hazardBuffer[0] = -1;
     hazardBuffer[1] = -1;
 }
 
-//-------------------------------------------- MAIN FUNCTION
-//-------------------------------------------------
 
-int main(int argc, char* argv[]) {
+//-------------------------------------------- MAIN FUNCTION -------------------------------------------------
+
+int main(int argc, char* argv[]){
+
     int pc = 0;
+    int cycles = 0; 
     int execed = -1;
     int stall;
 
-    // register initialisation
-    regs[regint("s1")] = 8;
-    regs[regint("s2")] = -8;
-    regs[regint("s0")] = -1;
-    regs[regint("sp")] = MAX_MEM - 1;
+    ifstream f;
+    f.open(argv[1]);
+    string name;
+    while(f >> name){
+        int c;
+        f >> c;
+        if(name == "add") cyc[0] = c;
+        else if(name == "sub") cyc[1] = c;
+        else if(name == "sll") cyc[2] = c;
+        else if(name == "srl") cyc[3] = c;
+        else if(name == "sw") cyc[4] = c;
+        else if(name == "lw") cyc[5] = c;
+        else if(name == "bne") cyc[6] = c;
+        else if(name == "beq") cyc[7] = c;
+        else if(name == "blez") cyc[8] = c;
+        else if(name == "bgtz") cyc[9] = c;
+        else if(name == "j") cyc[10] = c;
+        else if(name == "jr") cyc[11] = c;
+        else if(name == "jal") cyc[12] = c;
+        else{
+            cout << "Wrong instruction\n";
+            return 0;
+        }
+    }
+    f.close();
 
-    // parsing of input
+
+    //register initialisation
+    // regs[regint("s1")] = 8;
+    // regs[regint("s2")] = -8;
+    // regs[regint("s0")] = -1;
+    // regs[regint("sp")] = MAX_MEM - 1;
+
+    regs[regint("s1")] = 10;
+
+    //parsing of input
     int i_ = 0;
-    while (true) {
+    while(true){
         getline(cin, ins[i_]);
         replace(ins[i_], '(', ' ');
         replace(ins[i_], ')', ' ');
         replace(ins[i_], ',', ' ');
-        if (ins[i_] == "END_INSTRUCTIONS") {
+        if(ins[i_] == "END_INSTRUCTIONS"){
             instr[i_] = "";
-            for (int j = 0; j < 32; j++) instr[i_] += "0";
+            for(int j = 0; j < 32; j++) instr[i_] += "0";
             break;
         }
         instr[i_] = instruction_to_32(ins[i_]);
         ++i_;
     }
-    for (int i = 0; i < i_; i++) {
-        if (instr[i] == empty_instruction) {
+    for(int i = 0; i < i_; i++){
+        if(instr[i] == empty_instruction){
             instr[i] = instruction_to_32("j " + to_string(i_));
         }
     }
-    instr[i_ + 1] = instr[i_];
-    ins[i_ + 1] = "END";
-    instr[i_ + 2] = instr[i_];
-    ins[i_ + 2] = "END";
-    instr[i_ + 3] = instr[i_];
-    ins[i_ + 3] = "END";
+    instr[i_+1] = instr[i_];
+    ins[i_+1] = "END";
+    instr[i_+2] = instr[i_];
+    ins[i_+2] = "END";
+    instr[i_+3] = instr[i_];
+    ins[i_+3] = "END";
+
 
     init();
 
     int addr;
 
-    int debug = 0;
+    int debug=0;
 
-    for (int i = 0; i <= i_ + 3; i++) {
+    for(int i = 0; i <= i_ + 3; i++){
         cur_pc = i;
         WB();
         MEM();
         addr = EX();
         stall = ID();
-        if (stall == 1) {
-            i = i - 1;
-        } else if (stall == 2)  // double stall
+        if(stall==1){
+            i = i-1;
+        }
+        else if(stall ==2) // double stall
         {
-            i = i - 2;
-        } else if (stall == 3)  // control stall
+            i=i-2;
+        }
+        else if(stall==3) // control stall
         {
-            i = i - 1;
-        } else if (stall == 4)  // jump instruction !!
+            i=i-1;
+        }
+        else if(stall == 4) // jump instruction !!
         {
             i = jump_to;
             cur_instr = instr[i];
             cur_ins = ins[i];
-        } else {
+        }
+        else
+        {
             cur_instr = instr[i];
             cur_ins = ins[i];
         }
-        if (addr != -1) {
+        if(addr != -1)
+        {
             i = i + addr;
             cur_instr = instr[i];
             cur_ins = ins[i];
         }
-        cout << "Previously fetched instruction was: " << cur_ins << " " << i
-             << endl;
+        cout<<"Previously fetched instruction was: "<<cur_ins<<" " << i<<endl;
         IF(i);
-        // now that we are done with this stage, we see the kind of hazard that
-        // has been encountered the hazard type is stored in hazard_type
+        //now that we are done with this stage, we see the kind of hazard that has been encountered
+        //the hazard type is stored in hazard_type
 
         /*int x=0;
         for(x=0;x<=31;x++)
@@ -913,11 +1092,25 @@ int main(int argc, char* argv[]) {
         cout<<endl;
         for(x=9999999;x>=9999900;x--)
             cout<<mem[x]<<" ";
-
-
+        
+        
         debug++;
         //if(debug==100)
           //  break;
           */
     }
+
+    int x=0;
+    cerr << "Register values:" << endl;
+    for(x=0;x<=31;x++)
+    {
+        cerr<<regs[x]<<" ";
+    }
+    cerr<<endl;
+    cerr << "Memory values:" << endl;
+    for(x=9999999;x>=9999900;x--)
+        cerr<<mem[x]<<" ";
+    cerr << endl;
+
+    
 }
