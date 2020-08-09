@@ -1,0 +1,3 @@
+./a9 Assignment9/fact_registers.txt < Assignment9/fact.txt
+./a8 Assignment8/fact_registers < Assignment8/fact.txt
+./a9 Assignment8/fact_registers < Assignment8/fact.txt

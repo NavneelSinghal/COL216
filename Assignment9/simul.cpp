@@ -851,13 +851,22 @@ int main(int argc, char* argv[]) {
     int execed = -1;
     int stall;
 
+    ifstream f;
+    f.open(argv[1]);
+    string name;
+    while (f >> name) {
+        int c;
+        f >> c;
+        regs[regint(name)] = c;
+    }
+    f.close();
+    regs[regint("sp")] = MAX_MEM - 1;
     // register initialisation
     // regs[regint("s1")] = 8;
     // regs[regint("s2")] = -8;
     // regs[regint("s0")] = -1;
-    // regs[regint("sp")] = MAX_MEM - 1;
 
-    regs[regint("s1")] = 10;
+    // regs[regint("s1")] = 10;
 
     // parsing of input
     int i_ = 0;

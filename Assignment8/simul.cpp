@@ -832,11 +832,20 @@ int main(int argc, char* argv[]) {
     int execed = -1;
     int stall;
 
-    // register initialisation
-    regs[regint("s1")] = 8;
-    regs[regint("s2")] = -8;
-    regs[regint("s0")] = -1;
+    ifstream f;
+    f.open(argv[1]);
+    string name;
+    while (f >> name) {
+        int c;
+        f >> c;
+        regs[regint(name)] = c;
+    }
+    f.close();
     regs[regint("sp")] = MAX_MEM - 1;
+    // register initialisation
+//    regs[regint("s1")] = 8;
+//    regs[regint("s2")] = -8;
+//    regs[regint("s0")] = -1;
 
     // parsing of input
     int i_ = 0;
@@ -906,4 +915,15 @@ int main(int argc, char* argv[]) {
         // has been encountered the hazard type is stored in hazard_type
 
     }
+    
+    int x = 0;
+    cerr << "Register values:" << endl;
+    for (x = 0; x <= 31; x++) {
+        cerr << regs[x] << " ";
+    }
+    cerr << endl;
+    cerr << "Memory values:" << endl;
+    for (x = 9999999; x >= 9999900; x--) cerr << mem[x] << " ";
+    cerr << endl;
+
 }

@@ -1,0 +1,61 @@
+WB stage instruction : stall
+MEM stage instruction : stall
+EX stage instruction : stall
+ID stage instruction : stall
+Previously fetched instruction was: lw $s2 0 $s1  0
+IF stage instruction : lw $s2 0 $s1 
+
+WB stage instruction : stall
+MEM stage instruction : stall
+EX stage instruction : stall
+ID stage instruction : lw $s2 0 $s1 
+Previously fetched instruction was: add $s3 $s2 $s1 1
+IF stage instruction : add $s3 $s2 $s1
+
+WB stage instruction : stall
+MEM stage instruction : stall
+EX stage instruction : lw $s2 0 $s1 
+Previously fetched instruction was: add $s3 $s2 $s1 1
+IF stage instruction : add $s3 $s2 $s1
+
+WB stage instruction : stall
+reg[0] becomes 0
+MEM stage instruction : lw $s2 0 $s1 
+Forwarding happended
+EX stage instruction : stall
+ID stage instruction : add $s3 $s2 $s1
+Previously fetched instruction was: add $s4 $s2 $zero 2
+IF stage instruction : add $s4 $s2 $zero
+
+WB stage instruction : lw $s2 0 $s1 
+reg[18] becomes 0
+MEM stage instruction : stall
+Forwarding happended
+EX stage instruction : add $s3 $s2 $s1
+ID stage instruction : add $s4 $s2 $zero
+Previously fetched instruction was: END_INSTRUCTIONS 3
+IF stage instruction : END_INSTRUCTIONS
+
+WB stage instruction : stall
+MEM stage instruction : add $s3 $s2 $s1
+EX stage instruction : add $s4 $s2 $zero
+ID stage instruction : END_INSTRUCTIONS
+Previously fetched instruction was: END 4
+IF stage instruction : END
+
+WB stage instruction : add $s3 $s2 $s1
+reg[19] becomes 8
+MEM stage instruction : add $s4 $s2 $zero
+EX stage instruction : END_INSTRUCTIONS
+ID stage instruction : END
+Previously fetched instruction was: END 5
+IF stage instruction : END
+
+WB stage instruction : add $s4 $s2 $zero
+reg[20] becomes 0
+MEM stage instruction : END_INSTRUCTIONS
+EX stage instruction : END
+ID stage instruction : END
+Previously fetched instruction was: END 6
+IF stage instruction : END
+
