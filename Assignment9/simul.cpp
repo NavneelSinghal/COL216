@@ -4,9 +4,6 @@ using namespace std;
 #define REP(i, n) for (int i = 0; i < n; ++i)
 #define INSTRUCTION_NOT_FOUND 0
 
-int cyc[13] = {0};  // for every instruction we store the number of clock cycles
-                    // in this array
-
 int string_to_int(string s) {
     int ans = 0;
     int m = s.size() - 1;
@@ -832,48 +829,8 @@ void init() {
 
 int main(int argc, char* argv[]) {
     int pc = 0;
-    int cycles = 0;
     int execed = -1;
     int stall;
-
-    ifstream f;
-    f.open(argv[1]);
-    string name;
-    while (f >> name) {
-        int c;
-        f >> c;
-        if (name == "add")
-            cyc[0] = c;
-        else if (name == "sub")
-            cyc[1] = c;
-        else if (name == "sll")
-            cyc[2] = c;
-        else if (name == "srl")
-            cyc[3] = c;
-        else if (name == "sw")
-            cyc[4] = c;
-        else if (name == "lw")
-            cyc[5] = c;
-        else if (name == "bne")
-            cyc[6] = c;
-        else if (name == "beq")
-            cyc[7] = c;
-        else if (name == "blez")
-            cyc[8] = c;
-        else if (name == "bgtz")
-            cyc[9] = c;
-        else if (name == "j")
-            cyc[10] = c;
-        else if (name == "jr")
-            cyc[11] = c;
-        else if (name == "jal")
-            cyc[12] = c;
-        else {
-            cout << "Wrong instruction\n";
-            return 0;
-        }
-    }
-    f.close();
 
     // register initialisation
     regs[regint("s1")] = 8;
