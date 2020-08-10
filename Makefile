@@ -32,5 +32,3 @@ all:
 	echo "checking 8 and 10"
 	diff status8 status10	
 	cat status8
-
-
