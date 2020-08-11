@@ -1,0 +1,18 @@
+add $a0 $zero $t0
+add $a1 $zero $t1
+jal 4
+END
+add $sp $sp $t2
+sw $a0 0($sp)
+sw $a1 1($sp)
+sw $ra 2($sp)
+jal 14
+lw $a1 1($sp)
+lw $ra 2($sp)
+add $sp $sp $t3
+add $v0 $v0 $a1
+jr $ra
+sll $v0 $a0 1
+jr $ra
+END
+END_INSTRUCTIONS
