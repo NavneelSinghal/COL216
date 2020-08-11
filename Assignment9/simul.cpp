@@ -797,6 +797,8 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
+    } else {
+        assert(out.size() == 32);
     }
     return out;
 }
