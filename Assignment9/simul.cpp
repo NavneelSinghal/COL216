@@ -322,6 +322,7 @@ pair<int, int> check_hazard(
 
     // note i goes from 1 to 0, because if its true for i=0 and 1 then we need
     // i=0 to be selected
+
     for (i = 1; i >= 0; i--) {
         if (hazardBuffer[i] == -1 || hazardBuffer[i] == 0) continue;
         if (hazardBuffer[i] == rs) {
@@ -394,6 +395,50 @@ int ID() {
         control();
 
         return 1;
+    }
+
+    if(jr && hz.first!=0) // special case for j as forwarding is done in ex state, but jump is done in id state
+    {
+        if(hz.first==10)
+        {
+            id_ex.instr_15_11 = "00000";
+            id_ex.instr_20_16 = "00000";
+            id_ex.sign_extend = "00000000000000000000000000000000";
+            id_ex.read_data_1 = 0;
+            id_ex.read_data_2 = 0;
+            id_ex.instruction = "stall";
+
+            not_stall = false;
+            control();
+
+            return 2;
+
+        }
+        if(hz.first==20)
+        {
+            id_ex.instr_15_11 = "00000";
+            id_ex.instr_20_16 = "00000";
+            id_ex.sign_extend = "00000000000000000000000000000000";
+            id_ex.read_data_1 = 0;
+            id_ex.read_data_2 = 0;
+            id_ex.instruction = "stall";
+
+            not_stall = false;
+            control();
+
+            return 1;
+        }
+        // if(hz.first!=0)
+        // {
+
+        // }
+        // else if(hz.first!=0)
+        // {
+                       
+        // }
+        // else if(hz.second!=0)
+        // {
+        // }
     }
 
     if (rd == -100) {
@@ -561,10 +606,7 @@ int EX() {  // i is the program counter, its needed for jal
 }
 
 void MEM() {
-    // need to check if this needs to be done in the instruction fetch or here
-    // we plan to do everything (all the stages of the pipeline) in the reverse
-    // order to avoid overwriting, so if we do this here, then we probably dont
-    // have an issue
+
     cout << "MEM stage instruction : " << ex_mem.instruction << endl;
 
     pc_src = ex_mem.zero && ex_mem.m.branch;
@@ -797,7 +839,7 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
-    } else {
+    } else {	
         assert(out.size() == 32);
     }
     return out;
@@ -868,8 +910,6 @@ int main(int argc, char* argv[]) {
     // regs[regint("s2")] = -8;
     // regs[regint("s0")] = -1;
 
-    // regs[regint("s1")] = 10;
-
     // parsing of input
     int i_ = 0;
     while (true) {
@@ -902,12 +942,12 @@ int main(int argc, char* argv[]) {
     int addr;
 
     int debug = 0;
-    
+
     int cycles = 0;
 
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
-        
+
         cur_pc = i;
         WB();
         MEM();
