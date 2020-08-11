@@ -310,7 +310,11 @@ pair<int, int> check_hazard(
 {
     if (rs == 0 && rt == 0 &&
         rd == 0)  // empty instruction has no hazard whatsoever
+    {
+        hazardBuffer[1] = hazardBuffer[0];	
+        hazardBuffer[0] = rd;	
         return make_pair(0, 0);
+    }
 
     bool hazard = false;
     int i = 0;
