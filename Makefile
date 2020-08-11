@@ -34,9 +34,9 @@ all:
 	cat status8
 
 4:
-	./a8 tests/sar_mips_reg.txt < tests/sar_mips.txt 2> status8 > out8
-	./a9 tests/sar_mips_reg.txt < tests/sar_mips.txt 2> status9 > out9
-	./a10 tests/sar_mips_reg.txt 0.5 2 < tests/sar_mips.txt 2> status10 > out10
+	./a8 tests/branch_f_reg.txt < tests/branch_f.txt 2> status8 > out8
+	./a9 tests/branch_f_reg.txt < tests/branch_f.txt 2> status9 > out9
+	./a10 tests/branch_f_reg.txt 0.5 2 < tests/branch_f.txt 2> status10 > out10
 	echo "checking 8 and 9"
 	diff status8 status9
 	echo "checking 8 and 10"

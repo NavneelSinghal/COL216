@@ -2,113 +2,162 @@ WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
 ID stage instruction : stall
-Previously fetched instruction was: lw $s2 0 $s1  0
-IF stage instruction : lw $s2 0 $s1 
+Previously fetched instruction was: add t0 zero t3 0
+IF stage instruction : add t0 zero t3
 
 WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
-ID stage instruction : lw $s2 0 $s1 
-Previously fetched instruction was: add $s3 $s2 $s1 1
-IF stage instruction : add $s3 $s2 $s1
+ID stage instruction : add t0 zero t3
+Previously fetched instruction was: sub t1 zero t0 1
+IF stage instruction : sub t1 zero t0
 
 WB stage instruction : stall
 MEM stage instruction : stall
-EX stage instruction : lw $s2 0 $s1 
-Previously fetched instruction was: add $s3 $s2 $s1 1
-IF stage instruction : add $s3 $s2 $s1
+EX stage instruction : add t0 zero t3
+ID stage instruction : sub t1 zero t0
+Previously fetched instruction was: add t2 zero zero 2
+IF stage instruction : add t2 zero zero
 
 WB stage instruction : stall
 reg[0] becomes 0
-MEM stage instruction : lw $s2 0 $s1 
+MEM stage instruction : add t0 zero t3
 Forwarding happended
-EX stage instruction : stall
-ID stage instruction : add $s3 $s2 $s1
-Previously fetched instruction was: add $s4 $s2 $zero 2
-IF stage instruction : add $s4 $s2 $zero
+EX stage instruction : sub t1 zero t0
+ID stage instruction : add t2 zero zero
+Previously fetched instruction was: blez t1 8 3
+IF stage instruction : blez t1 8
 
-WB stage instruction : lw $s2 0 $s1 
-reg[18] becomes 0
-MEM stage instruction : stall
+WB stage instruction : add t0 zero t3
+reg[8] becomes 1
+MEM stage instruction : sub t1 zero t0
+EX stage instruction : add t2 zero zero
+ID stage instruction : blez t1 8
+Previously fetched instruction was: blez t1 8 3
+IF stage instruction : stalling right now
+
+WB stage instruction : sub t1 zero t0
+reg[9] becomes -1
+MEM stage instruction : add t2 zero zero
 Forwarding happended
-EX stage instruction : add $s3 $s2 $s1
-ID stage instruction : add $s4 $s2 $zero
-Previously fetched instruction was: add $s4 $s1 $s4 3
-IF stage instruction : add $s4 $s1 $s4
+EX stage instruction : blez t1 8
+Branch condition is true  so pc is now 12
+ID stage instruction : stall
+Previously fetched instruction was: bne t0 zero -7 12
+IF stage instruction : bne t0 zero -7
+
+WB stage instruction : add t2 zero zero
+reg[10] becomes 0
+MEM stage instruction : blez t1 8
+EX stage instruction : stall
+ID stage instruction : bne t0 zero -7
+Previously fetched instruction was: bne t0 zero -7 12
+IF stage instruction : stalling right now
+
+WB stage instruction : blez t1 8
+MEM stage instruction : stall
+EX stage instruction : bne t0 zero -7
+Branch condition is true  so pc is now 6
+ID stage instruction : stall
+Previously fetched instruction was: bgtz t0 10 6
+IF stage instruction : bgtz t0 10
 
 WB stage instruction : stall
-MEM stage instruction : add $s3 $s2 $s1
-EX stage instruction : add $s4 $s2 $zero
-ID stage instruction : add $s4 $s1 $s4
-Previously fetched instruction was: sub $s4 $sp $s1 4
-IF stage instruction : sub $s4 $sp $s1
-
-WB stage instruction : add $s3 $s2 $s1
-reg[19] becomes 10
-MEM stage instruction : add $s4 $s2 $zero
-Forwarding happended
-EX stage instruction : add $s4 $s1 $s4
-ID stage instruction : sub $s4 $sp $s1
-Previously fetched instruction was: sw $s4 0 $sp  5
-IF stage instruction : sw $s4 0 $sp 
-
-WB stage instruction : add $s4 $s2 $zero
-reg[20] becomes 0
-MEM stage instruction : add $s4 $s1 $s4
-EX stage instruction : sub $s4 $sp $s1
-ID stage instruction : sw $s4 0 $sp 
-Previously fetched instruction was: lw $s4 10 $s4  6
-IF stage instruction : lw $s4 10 $s4 
-
-WB stage instruction : add $s4 $s1 $s4
-reg[20] becomes 10
-MEM stage instruction : sub $s4 $sp $s1
-Forwarding happended
-EX stage instruction : sw $s4 0 $sp 
-ID stage instruction : lw $s4 10 $s4 
-Previously fetched instruction was: add $s3 $s4 $s4 7
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : sub $s4 $sp $s1
-reg[20] becomes 9999989
-MEM stage instruction : sw $s4 0 $sp 
-mem[9999999] becomes 9999989
-Forwarding happended
-EX stage instruction : lw $s4 10 $s4 
-Previously fetched instruction was: add $s3 $s4 $s4 7
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : sw $s4 0 $sp 
-MEM stage instruction : lw $s4 10 $s4 
-Forwarding happended
-Forwarding happended
+reg[0] becomes 0
+MEM stage instruction : bne t0 zero -7
 EX stage instruction : stall
-ID stage instruction : add $s3 $s4 $s4
-Previously fetched instruction was: END_INSTRUCTIONS 8
+ID stage instruction : bgtz t0 10
+Previously fetched instruction was: bgtz t0 10 6
+IF stage instruction : stalling right now
+
+WB stage instruction : bne t0 zero -7
+MEM stage instruction : stall
+EX stage instruction : bgtz t0 10
+Branch condition is true  so pc is now 17
+ID stage instruction : stall
+Previously fetched instruction was: jal 9 17
+IF stage instruction : jal 9
+
+WB stage instruction : stall
+reg[0] becomes 0
+MEM stage instruction : bgtz t0 10
+EX stage instruction : stall
+ID stage instruction : jal 9
+Jump to instruction no. : 9
+Previously fetched instruction was: beq t2 zero 5 9
+IF stage instruction : beq t2 zero 5
+
+WB stage instruction : bgtz t0 10
+MEM stage instruction : stall
+EX stage instruction : jal 9
+ID stage instruction : beq t2 zero 5
+Previously fetched instruction was: beq t2 zero 5 9
+IF stage instruction : stalling right now
+
+WB stage instruction : stall
+reg[0] becomes 0
+MEM stage instruction : jal 9
+EX stage instruction : beq t2 zero 5
+Branch condition is true  so pc is now 15
+ID stage instruction : stall
+Previously fetched instruction was: jr ra 15
+IF stage instruction : jr ra
+
+WB stage instruction : jal 9
+reg[31] becomes 18
+MEM stage instruction : beq t2 zero 5
+EX stage instruction : stall
+ID stage instruction : jr ra
+Jump to instruction no. : 18
+Previously fetched instruction was: add s0 s0 t3 18
+IF stage instruction : add s0 s0 t3
+
+WB stage instruction : beq t2 zero 5
+MEM stage instruction : stall
+Forwarding happended
+EX stage instruction : jr ra
+ID stage instruction : add s0 s0 t3
+Previously fetched instruction was: add s0 s0 s1 19
+IF stage instruction : add s0 s0 s1
+
+WB stage instruction : stall
+reg[0] becomes 0
+MEM stage instruction : jr ra
+EX stage instruction : add s0 s0 t3
+ID stage instruction : add s0 s0 s1
+Previously fetched instruction was: END 20
+IF stage instruction : END
+
+WB stage instruction : jr ra
+MEM stage instruction : add s0 s0 t3
+Forwarding happended
+EX stage instruction : add s0 s0 s1
+ID stage instruction : END
+Jump to instruction no. : 21
+Previously fetched instruction was: END_INSTRUCTIONS 21
 IF stage instruction : END_INSTRUCTIONS
 
-WB stage instruction : lw $s4 10 $s4 
-reg[20] becomes 9999989
-MEM stage instruction : stall
-Forwarding happended
-Forwarding happended
-EX stage instruction : add $s3 $s4 $s4
+WB stage instruction : add s0 s0 t3
+reg[16] becomes 1
+MEM stage instruction : add s0 s0 s1
+EX stage instruction : END
 ID stage instruction : END_INSTRUCTIONS
-Previously fetched instruction was: END 9
+Previously fetched instruction was: END 22
 IF stage instruction : END
 
-WB stage instruction : stall
-MEM stage instruction : add $s3 $s4 $s4
+WB stage instruction : add s0 s0 s1
+reg[16] becomes 1
+MEM stage instruction : END
 EX stage instruction : END_INSTRUCTIONS
 ID stage instruction : END
-Previously fetched instruction was: END 10
+Previously fetched instruction was: END 23
 IF stage instruction : END
 
-WB stage instruction : add $s3 $s4 $s4
-reg[19] becomes 19999978
+WB stage instruction : END
 MEM stage instruction : END_INSTRUCTIONS
 EX stage instruction : END
 ID stage instruction : END
-Previously fetched instruction was: END 11
+Previously fetched instruction was: END 24
 IF stage instruction : END
 
+Number of clock cycles: 20
