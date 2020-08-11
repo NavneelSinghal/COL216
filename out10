@@ -2,53 +2,71 @@ WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
 ID stage instruction : stall
-IF stage instruction : add $s1 $s1 $s2
+IF stage instruction : lw $2 21 $1 
 
 WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
-ID stage instruction : add $s1 $s1 $s2
-IF stage instruction : add $s1 $s1 $s3
+ID stage instruction : lw $2 21 $1 
+IF stage instruction : add $4 $2 $5
 
 WB stage instruction : stall
 MEM stage instruction : stall
-EX stage instruction : add $s1 $s1 $s2
-ID stage instruction : add $s1 $s1 $s3
-IF stage instruction : add $s1 $s1 $s4
+EX stage instruction : lw $2 21 $1 
+IF stage instruction : add $4 $2 $5
 
 WB stage instruction : stall
 reg[0] becomes 0
-MEM stage instruction : add $s1 $s1 $s2
-Forwarding happended
-EX stage instruction : add $s1 $s1 $s3
-ID stage instruction : add $s1 $s1 $s4
-IF stage instruction : add $s1 $s1 $s5
+miss
+MEM stage instruction : lw $2 21 $1 
+EX stage instruction : stall
+ID stage instruction : add $4 $2 $5
+IF stage instruction : add $4 $2 $5
 
-WB stage instruction : add $s1 $s1 $s2
-reg[17] becomes 3
-MEM stage instruction : add $s1 $s1 $s3
+WB stage instruction : stall
+MEM stage instruction : lw $2 21 $1 
+EX stage instruction : stall
+ID stage instruction : add $4 $2 $5
+IF stage instruction : add $4 $2 $5
+
+WB stage instruction : stall
+MEM stage instruction : lw $2 21 $1 
 Forwarding happended
-EX stage instruction : add $s1 $s1 $s4
-ID stage instruction : add $s1 $s1 $s5
+EX stage instruction : stall
+ID stage instruction : add $4 $2 $5
+IF stage instruction : add $8 $2 $6
+
+WB stage instruction : lw $2 21 $1 
+reg[2] becomes 0
+MEM stage instruction : stall
+Forwarding happended
+EX stage instruction : add $4 $2 $5
+ID stage instruction : add $8 $2 $6
+IF stage instruction : add $9 $4 $2
+
+WB stage instruction : stall
+MEM stage instruction : add $4 $2 $5
+EX stage instruction : add $8 $2 $6
+ID stage instruction : add $9 $4 $2
 IF stage instruction : END_INSTRUCTIONS
 
-WB stage instruction : add $s1 $s1 $s3
-reg[17] becomes 6
-MEM stage instruction : add $s1 $s1 $s4
+WB stage instruction : add $4 $2 $5
+reg[4] becomes 0
+MEM stage instruction : add $8 $2 $6
 Forwarding happended
-EX stage instruction : add $s1 $s1 $s5
+EX stage instruction : add $9 $4 $2
 ID stage instruction : END_INSTRUCTIONS
 IF stage instruction : END
 
-WB stage instruction : add $s1 $s1 $s4
-reg[17] becomes 10
-MEM stage instruction : add $s1 $s1 $s5
+WB stage instruction : add $8 $2 $6
+reg[8] becomes 0
+MEM stage instruction : add $9 $4 $2
 EX stage instruction : END_INSTRUCTIONS
 ID stage instruction : END
 IF stage instruction : END
 
-WB stage instruction : add $s1 $s1 $s5
-reg[17] becomes 15
+WB stage instruction : add $9 $4 $2
+reg[9] becomes 0
 MEM stage instruction : END_INSTRUCTIONS
 EX stage instruction : END
 ID stage instruction : END
