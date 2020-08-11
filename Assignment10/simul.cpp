@@ -1012,8 +1012,12 @@ int main(int argc, char* argv[]) {
     int addr;
 
     int debug = 0;
+    
+    int cycles = 0;
 
     for (int i = 0; i <= i_ + 3; i++) {
+        cycles += 1;
+        
         cur_pc = i;
         WB();
         int mis = MEM();
@@ -1070,6 +1074,8 @@ int main(int argc, char* argv[]) {
 
         IF(i);
     }
+    
+    cout << "Number of clock cycles: " << cycles << endl;
 
     int x = 0;
     cerr << "Register values:" << endl;
