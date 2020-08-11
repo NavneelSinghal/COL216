@@ -422,6 +422,44 @@ int ID() {
         return 1;
     }
 
+    if(jr && hz.first!=0) // special case for j as forwarding is done in ex state, but jump is done in id state
+    {
+        if(hz.first==10)
+        {
+            id_ex.instr_15_11 = "00000";
+            id_ex.instr_20_16 = "00000";
+            id_ex.sign_extend = "00000000000000000000000000000000";
+            id_ex.read_data_1 = 0;
+            id_ex.read_data_2 = 0;
+            id_ex.instruction = "stall";
+            not_stall = false;
+            control();
+            return 2;
+        }
+        if(hz.first==20)
+        {
+            id_ex.instr_15_11 = "00000";
+            id_ex.instr_20_16 = "00000";
+            id_ex.sign_extend = "00000000000000000000000000000000";
+            id_ex.read_data_1 = 0;
+            id_ex.read_data_2 = 0;
+            id_ex.instruction = "stall";
+            not_stall = false;
+            control();
+            return 1;
+        }
+        // if(hz.first!=0)
+        // {
+        // }
+        // else if(hz.first!=0)
+        // {
+                       
+        // }
+        // else if(hz.second!=0)
+        // {
+        // }
+    }
+
     if (rd == -100) {
         do_fetch = 0;
     }
@@ -902,7 +940,7 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
-    } else {
+    }else {	
         assert(out.size() == 32);
     }
     return out;
@@ -1012,12 +1050,12 @@ int main(int argc, char* argv[]) {
     int addr;
 
     int debug = 0;
-    
+
     int cycles = 0;
 
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
-        
+
         cur_pc = i;
         WB();
         int mis = MEM();
@@ -1074,7 +1112,7 @@ int main(int argc, char* argv[]) {
 
         IF(i);
     }
-    
+
     cout << "Number of clock cycles: " << cycles << endl;
 
     int x = 0;
