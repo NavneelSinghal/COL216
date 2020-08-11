@@ -458,6 +458,8 @@ int EX() {  // i is the program counter, its needed for jal
     int alu_operand_1 = id_ex.read_data_1;
     int alu_operand_2 = (id_ex.ex.alu_src) ? string_to_int(id_ex.sign_extend)
                                            : id_ex.read_data_2;
+    //debug
+    cout << id_ex.sign_extend << endl;
     int shift_amt = (string_to_int(id_ex.sign_extend.substr(21, 5)));
 
     ex_mem.read_data_2 = id_ex.read_data_2;
