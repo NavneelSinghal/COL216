@@ -1,0 +1,21 @@
+add $a0 $zero $s0
+add $a1 $zero $s1
+add $a2 $zero $s2
+add $a3 $zero $s2
+jal 6
+END
+add $sp $sp $s3
+sw $t1 8 $sp
+sw $t0 4 $sp
+sw $s0 0 $sp
+add $t0 $a0 $a1
+add $t1 $a2 $a3 
+sub $s0 $t0 $t1
+add $v0 $s0 $zero
+lw $s0 0 $sp
+lw $t0 4 $sp
+lw $t1 8 $sp
+add $sp $sp $s4
+jr $ra
+END
+END_INSTRUCTIONS

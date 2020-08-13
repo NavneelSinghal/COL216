@@ -1,0 +1,5 @@
+add $s1 $s1 $s2
+add $s1 $s1 $s3
+add $s1 $s1 $s4
+add $s1 $s1 $s5
+END_INSTRUCTIONS

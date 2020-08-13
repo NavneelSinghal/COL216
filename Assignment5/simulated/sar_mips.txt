@@ -1,0 +1,20 @@
+0	addi t0 zero 1
+1	sub t1 zero t0
+2	addi t2 zero zero
+3	blez t1 0x8
+4	addi s0 s0 1
+5	addi s1 s1 1
+6	bgtz t0 0xA
+7	addi s0 s0 1
+8	addi s1 s1 1
+9	beq t2 zero 0x5
+10	addi s0 s0 1
+11	addi s1 s1 1
+12	bne t0 zero -0x7
+13	addi s0 s0 1
+14	addi s1 s1 1
+15	jr ra
+16	addi s0 s0 1
+17	jal 0x9
+18	addi s0 s0 1
+19	add s0 s0 s1

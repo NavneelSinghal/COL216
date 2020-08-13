@@ -1114,7 +1114,14 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "Number of clock cycles: " << cycles << endl;
-
+    
+    ofstream outfile;
+    outfile.open("out_file", ios_base::app); // append instead of overwrite
+    outfile << argv[2] << " " << cycles << "\n"; 
+    outfile.close();
+    outfile.open("out_file_N", ios_base::app); // append instead of overwrite
+    outfile << argv[3] << " " << cycles << "\n"; 
+    outfile.close();
     int x = 0;
     cerr << "Register values:" << endl;
     for (x = 0; x <= 31; x++) {

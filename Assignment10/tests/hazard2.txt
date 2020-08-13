@@ -1,0 +1,6 @@
+add t0 t0 t3
+bne t0 t5 1
+END
+j 0
+END
+END_INSTRUCTIONS
