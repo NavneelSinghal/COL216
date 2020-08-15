@@ -565,8 +565,8 @@ void MEM() {
 
     // casual TODO: can we do this^ in previous stages too by doing this change
     // in the previous stage itself? (only for minimising the number of stalls,
-    //not relevant now, remember that premature optimization is the root cause
-    //of all evil)
+    // not relevant now, remember that premature optimization is the root cause
+    // of all evil)
 
     mem_wb.wb = ex_mem.wb;
 }
@@ -845,9 +845,9 @@ int main(int argc, char* argv[]) {
     f.close();
     regs[regint("sp")] = MAX_MEM - 1;
     // register initialisation
-//    regs[regint("s1")] = 8;
-//    regs[regint("s2")] = -8;
-//    regs[regint("s0")] = -1;
+    //    regs[regint("s1")] = 8;
+    //    regs[regint("s2")] = -8;
+    //    regs[regint("s0")] = -1;
 
     // parsing of input
     int i_ = 0;
@@ -881,12 +881,14 @@ int main(int argc, char* argv[]) {
     int addr;
 
     int debug = 0;
-    
+
     int cycles = 0;
+
+    int stalls = 0;
 
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
-        
+
         cur_pc = i;
         WB();
         MEM();
@@ -894,12 +896,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -919,10 +924,9 @@ int main(int argc, char* argv[]) {
         IF(i);
         // now that we are done with this stage, we see the kind of hazard that
         // has been encountered the hazard type is stored in hazard_type
-
     }
-    cout << "Number of clock cycles: " << cycles << endl;    
-    
+    cout << "Number of clock cycles: " << cycles << endl;
+    cout << "IPC: " << (float) (cycles - stalls) / cycles << endl;
     int x = 0;
     cerr << "Register values:" << endl;
     for (x = 0; x <= 31; x++) {
@@ -932,5 +936,4 @@ int main(int argc, char* argv[]) {
     cerr << "Memory values:" << endl;
     for (x = 9999999; x >= 9999900; x--) cerr << mem[x] << " ";
     cerr << endl;
-
 }

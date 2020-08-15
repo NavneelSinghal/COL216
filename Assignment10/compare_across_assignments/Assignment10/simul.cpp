@@ -112,30 +112,25 @@ string cur_instr;
 string cur_ins;
 string empty_instruction = "00000000000000000000000000000000";
 
-
 float prob;
 int pen_cycle;
 
 int mem[MAX_MEM] = {0};
 int regs[32] = {0};
 
-bool hit() // returns true if hit, false if miss
+bool hit()  // returns true if hit, false if miss
 {
-    float f = (rand()/(float)RAND_MAX)*1000.0;
+    float f = (rand() / (float)RAND_MAX) * 1000.0;
     int i = (int)f;
-    int new_prob = int(prob*1000);
-    if(i < new_prob)
-    {
-        //cout << "hit" << endl;
+    int new_prob = int(prob * 1000);
+    if (i < new_prob) {
+        // cout << "hit" << endl;
         return true;
-    }
-    else 
-    {
-        //cout << "miss" << endl;
+    } else {
+        // cout << "miss" << endl;
         return false;
     }
 }
-
 
 //-------------------------------- FUNCTIONS FOR RUNNING STAGES OF PIPELINE
 //----------------------------------
@@ -324,7 +319,6 @@ void IF(int i) {
     }
 }
 
-
 pair<int, int> check_hazard(
     int rs, int rt, int rd)  // takes the rs,rt and rd of an arithmetic
                              // instruction and determines no. of stalls if
@@ -332,11 +326,11 @@ pair<int, int> check_hazard(
 {
     if (rs == 0 && rt == 0 &&
         rd == 0)  // empty instruction has no hazard whatsoever
-        {
+    {
         hazardBuffer[1] = hazardBuffer[0];
         hazardBuffer[0] = rd;
         return make_pair(0, 0);
-        }
+    }
 
     bool hazard = false;
     int i = 0;
@@ -422,10 +416,10 @@ int ID() {
         return 1;
     }
 
-    if(jr && hz.first!=0) // special case for j as forwarding is done in ex state, but jump is done in id state
+    if (jr && hz.first != 0)  // special case for j as forwarding is done in ex
+                              // state, but jump is done in id state
     {
-        if(hz.first==10)
-        {
+        if (hz.first == 10) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -436,8 +430,7 @@ int ID() {
             control();
             return 2;
         }
-        if(hz.first==20)
-        {
+        if (hz.first == 20) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -453,7 +446,7 @@ int ID() {
         // }
         // else if(hz.first!=0)
         // {
-                       
+
         // }
         // else if(hz.second!=0)
         // {
@@ -506,7 +499,7 @@ int ID() {
 
 int EX() {  // i is the program counter, its needed for jal
     // forwarding
-    
+
     if (id_ex.hazard.first == 10) {
         cout << "Forwarding happended" << endl;
         id_ex.read_data_1 = ex_mem.alu_result;
@@ -548,7 +541,7 @@ int EX() {  // i is the program counter, its needed for jal
     int alu_operand_1 = id_ex.read_data_1;
     int alu_operand_2 = (id_ex.ex.alu_src) ? string_to_int(id_ex.sign_extend)
                                            : id_ex.read_data_2;
-    
+
     int shift_amt = (string_to_int(id_ex.sign_extend.substr(21, 5)));
 
     ex_mem.read_data_2 = id_ex.read_data_2;
@@ -630,7 +623,7 @@ int EX() {  // i is the program counter, its needed for jal
 bool stall_mode = false;
 bool stalled_earlier = false;
 int st = 0;
-int fBuffer=0;
+int fBuffer = 0;
 
 int MEM() {
     // need to check if this needs to be done in the instruction fetch or here
@@ -638,16 +631,13 @@ int MEM() {
     // order to avoid overwriting, so if we do this here, then we probably dont
     // have an issue
 
-    if(st == pen_cycle)
-    {
+    if (st == pen_cycle) {
         stalled_earlier = true;
-        stall_mode=false;
+        stall_mode = false;
         st = 0;
     }
 
-    if(stall_mode)
-    {
-
+    if (stall_mode) {
         mem_wb.wb.cur_pc = ex_mem.wb.cur_pc;
         mem_wb.wb.reg_write = 0;
         mem_wb.wb.mem_to_reg = false;
@@ -657,27 +647,25 @@ int MEM() {
         mem_wb.wb.instr_last_26 = "00000000000000000000000000";
 
         mem_wb.read_data = 0;
-        mem_wb.write_register=0;
-        mem_wb.alu_result=0;
+        mem_wb.write_register = 0;
+        mem_wb.alu_result = 0;
         mem_wb.instruction = "stall";
 
         st++;
-        
-        cout<<"MEM stage instruction : "<<ex_mem.instruction<<endl;
-        
+
+        cout << "MEM stage instruction : " << ex_mem.instruction << endl;
+
         return 1;
     }
 
-    if((ex_mem.m.mem_write || ex_mem.m.mem_read) && !stall_mode && !stalled_earlier) 
-    {
+    if ((ex_mem.m.mem_write || ex_mem.m.mem_read) && !stall_mode &&
+        !stalled_earlier) {
         bool b = hit();
-        if(!b && pen_cycle != 0)
-        {
-
+        if (!b && pen_cycle != 0) {
             cout << "miss" << endl;
 
             stall_mode = true;
-                
+
             mem_wb.wb.cur_pc = ex_mem.wb.cur_pc;
             mem_wb.wb.reg_write = 0;
             mem_wb.wb.mem_to_reg = false;
@@ -687,11 +675,11 @@ int MEM() {
             mem_wb.wb.instr_last_26 = "00000000000000000000000000";
 
             mem_wb.read_data = 0;
-            mem_wb.write_register=0;
-            mem_wb.alu_result=0;
+            mem_wb.write_register = 0;
+            mem_wb.alu_result = 0;
             mem_wb.instruction = "stall";
 
-            cout<<"MEM stage instruction : "<<ex_mem.instruction<<endl;
+            cout << "MEM stage instruction : " << ex_mem.instruction << endl;
 
             st++;
 
@@ -699,10 +687,8 @@ int MEM() {
 
             return 1;
         }
-        if(b)
-            cout <<"hit"<< endl;
+        if (b) cout << "hit" << endl;
     }
-    
 
     cout << "MEM stage instruction : " << ex_mem.instruction << endl;
 
@@ -728,14 +714,14 @@ int MEM() {
 
     mem_wb.wb = ex_mem.wb;
 
-    stalled_earlier= false;
+    stalled_earlier = false;
 
     return 0;
 }
 
 void WB() {
     cout << "WB stage instruction : " << mem_wb.instruction << endl;
-    
+
     mem_wb.write_data =
         (mem_wb.wb.mem_to_reg) ? mem_wb.read_data : mem_wb.alu_result;
 
@@ -940,7 +926,7 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
-    }else {	
+    } else {
         assert(out.size() == 32);
     }
     return out;
@@ -992,7 +978,6 @@ void init() {
 //-------------------------------------------------
 
 int main(int argc, char* argv[]) {
-
     prob = stof(argv[2]);
     pen_cycle = stoi(argv[3]);
 
@@ -1016,7 +1001,6 @@ int main(int argc, char* argv[]) {
     // regs[regint("s2")] = -8;
     // regs[regint("s0")] = -1;
     // regs[regint("sp")] = MAX_MEM - 1;
-
 
     // parsing of input
     int i_ = 0;
@@ -1053,6 +1037,8 @@ int main(int argc, char* argv[]) {
 
     int cycles = 0;
 
+    int stalls = 4;
+
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
 
@@ -1060,28 +1046,23 @@ int main(int argc, char* argv[]) {
         WB();
         int mis = MEM();
 
-        if(mis==1)
-        {
-            i=i-1;
+        if (mis == 1) {
+            i = i - 1;
+            stalls += 1;
             // printing
-
-            cout<<"EX stage instruction : "<<id_ex.instruction<<endl;
-            cout<<"ID stage instruction : "<<if_id.instr<<endl;
-            cout<<"IF stage instruction : "<<cur_ins<<endl;
+            cout << "EX stage instruction : " << id_ex.instruction << endl;
+            cout << "ID stage instruction : " << if_id.instr << endl;
+            cout << "IF stage instruction : " << cur_ins << endl;
             cout << endl;
 
-            if(id_ex.hazard.first==20)
-            {
-                id_ex.hazard.first =  0;
+            if (id_ex.hazard.first == 20) {
+                id_ex.hazard.first = 0;
                 id_ex.read_data_1 = fBuffer;
-
             }
-            if(id_ex.hazard.second==20)
-            {
+            if (id_ex.hazard.second == 20) {
                 id_ex.hazard.second = 0;
                 id_ex.read_data_2 = fBuffer;
-
-            }            
+            }
             continue;
         }
         addr = EX();
@@ -1089,12 +1070,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -1114,11 +1098,11 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "Number of clock cycles: " << cycles << endl;
-    
+    cout << "IPC: " << (float) (cycles - stalls) / cycles << endl;
     ofstream outfile;
-    outfile.open("out_file", ios_base::app); // append instead of overwrite
-    outfile << argv[2] << " " << cycles << "\n"; 
-  
+    outfile.open("out_file", ios_base::app);  // append instead of overwrite
+    outfile << argv[2] << " " << cycles << "\n";
+
     int x = 0;
     cerr << "Register values:" << endl;
     for (x = 0; x <= 31; x++) {

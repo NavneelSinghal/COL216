@@ -1,5 +1,6 @@
-#include <fstream>
 #include <bits/stdc++.h>
+
+#include <fstream>
 using namespace std;
 
 #define REP(i, n) for (int i = 0; i < n; ++i)
@@ -42,7 +43,7 @@ struct WB {
 struct IF_ID {
     int pc;
     string instruction;  // this is not the tokenised instruction, it is a 32
-                         // bit instruction
+    // bit instruction
     string instr;
 
 } if_id;
@@ -129,7 +130,7 @@ bool lw(string s) { return (s.substr(0, 6).compare("100011") == 0); }
 bool sw(string s) { return (s.substr(0, 6).compare("101011") == 0); }
 
 int control() {  // control returns the destination register number of the
-                 // innstruction
+    // innstruction
 
     if (!not_stall) {  // empty instruction
 
@@ -277,14 +278,13 @@ void IF(int i) {
         if_id.instruction = empty_instruction;
         if_id.instr = "stall";
         return;  // we don't want to fetch this instruction because right now we
-                 // go through a stall
+        // go through a stall
     }
     // while dealing with stalls, note that we do all this update only if the
     // hazard is not present (look for more places where we do stuff like this)
     // our plan is to keep a track of the current instruction - this will help
     // with dealing with stalls as well as in the end when we run out of
     // instructions
-
 
     if_id.pc = i + 1;
     if_id.instruction = cur_instr;
@@ -300,11 +300,10 @@ void IF(int i) {
     }
 }
 
-
-pair<int, int> check_hazard(
-    int rs, int rt, int rd)  // takes the rs,rt and rd of an arithmetic
-                             // instruction and determines no. of stalls if
-                             // hazards is there or no hazard is there
+pair<int, int> check_hazard(int rs, int rt,
+                            int rd)  // takes the rs,rt and rd of an arithmetic
+// instruction and determines no. of stalls if
+// hazards is there or no hazard is there
 {
     if (rs == 0 && rt == 0 &&
         rd == 0)  // empty instruction has no hazard whatsoever
@@ -352,7 +351,7 @@ int ID() {
     rt = string_to_int(if_id.instruction.substr(11, 5));
 
     rd = control();  // if rd is -100 its is  branch instruction, for r format
-                     // instruction the destination register number is returned
+    // instruction the destination register number is returned
 
     if (rd == -2 ||
         rd == -4)  // this is lw or jr, where there is only one dependency
@@ -395,10 +394,10 @@ int ID() {
         return 1;
     }
 
-    if(jr && hz.first!=0) // special case for j as forwarding is done in ex state, but jump is done in id state
+    if (jr && hz.first != 0)  // special case for j as forwarding is done in ex
+                              // state, but jump is done in id state
     {
-        if(hz.first==10)
-        {
+        if (hz.first == 10) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -410,10 +409,8 @@ int ID() {
             control();
 
             return 2;
-
         }
-        if(hz.first==20)
-        {
+        if (hz.first == 20) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -432,7 +429,7 @@ int ID() {
         // }
         // else if(hz.first!=0)
         // {
-                       
+
         // }
         // else if(hz.second!=0)
         // {
@@ -458,7 +455,6 @@ int ID() {
 
     id_ex.instr_20_16 = if_id.instruction.substr(11, 5);
     id_ex.instr_15_11 = if_id.instruction.substr(16, 5);
-
 
     // now initialise the wb, m, ex of id_ex - work of control unit - done
     // ex - alu_src, alu_op, reg_dst
@@ -503,7 +499,6 @@ int EX() {  // i is the program counter, its needed for jal
     }
 
     int offset = string_to_int(id_ex.sign_extend);
-
 
     if (id_ex.wb.isj || id_ex.wb.isjal) {
         ex_mem.add_result = string_to_int(
@@ -594,8 +589,6 @@ int EX() {  // i is the program counter, its needed for jal
 }
 
 void MEM() {
-
-
     pc_src = ex_mem.zero && ex_mem.m.branch;
 
     mem_wb.instruction = ex_mem.instruction;
@@ -618,7 +611,6 @@ void MEM() {
 }
 
 void WB() {
-
     mem_wb.write_data =
         (mem_wb.wb.mem_to_reg) ? mem_wb.read_data : mem_wb.alu_result;
 
@@ -821,7 +813,7 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
-    } else {	
+    } else {
         assert(out.size() == 32);
     }
     return out;
@@ -927,6 +919,8 @@ int main(int argc, char* argv[]) {
 
     int cycles = 0;
 
+    int stalls = 4;
+
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
 
@@ -937,12 +931,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 3;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -962,8 +959,7 @@ int main(int argc, char* argv[]) {
 
     ofstream outfile;
 
-  outfile.open("test.txt", ios_base::app); // append instead of overwrite
-  outfile << cycles << " "; 
-  return 0;
-
+    outfile.open("test.txt", ios_base::app);  // append instead of overwrite
+    outfile << cycles << " ";
+    return 0;
 }

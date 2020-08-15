@@ -1,5 +1,6 @@
-#include <fstream>
 #include <bits/stdc++.h>
+
+#include <fstream>
 using namespace std;
 
 #define REP(i, n) for (int i = 0; i < n; ++i)
@@ -283,7 +284,6 @@ void IF(int i) {
     // with dealing with stalls as well as in the end when we run out of
     // instructions
 
-
     if_id.pc = i + 1;
     if_id.instruction = cur_instr;
     if_id.instr = cur_ins;
@@ -413,7 +413,6 @@ int ID() {
     id_ex.instr_20_16 = if_id.instruction.substr(11, 5);
     id_ex.instr_15_11 = if_id.instruction.substr(16, 5);
 
-
     // now initialise the wb, m, ex of id_ex - work of control unit - done
     // ex - alu_src, alu_op, reg_dst
     // m - mem_read, mem_write, branch
@@ -436,7 +435,6 @@ int ID() {
 
 int EX() {  // i is the program counter, its needed for jal
     int offset = string_to_int(id_ex.sign_extend);
-
 
     if (id_ex.wb.isj || id_ex.wb.isjal) {
         ex_mem.add_result = string_to_int(
@@ -522,7 +520,6 @@ int EX() {  // i is the program counter, its needed for jal
     if ((id_ex.ex.alu_op == 1 || id_ex.ex.alu_op == 2 || id_ex.ex.alu_op == 3 ||
          id_ex.ex.alu_op == 4) &&
         (ex_mem.zero && ex_mem.m.branch)) {
-       
         return offset;
     } else {
         return -1;
@@ -546,7 +543,6 @@ void MEM() {
     }
 
     if (ex_mem.m.mem_write) {
-        
         mem[ex_mem.alu_result] = ex_mem.read_data_2;
     }
 
@@ -556,14 +552,13 @@ void MEM() {
 
     // casual TODO: can we do this^ in previous stages too by doing this change
     // in the previous stage itself? (only for minimising the number of stalls,
-    //not relevant now, remember that premature optimization is the root cause
-    //of all evil)
+    // not relevant now, remember that premature optimization is the root cause
+    // of all evil)
 
     mem_wb.wb = ex_mem.wb;
 }
 
 void WB() {
-
     mem_wb.write_data =
         (mem_wb.wb.mem_to_reg) ? mem_wb.read_data : mem_wb.alu_result;
 
@@ -572,7 +567,6 @@ void WB() {
     if (mem_wb.wb.reg_write) {
         regs[mem_wb.write_register] =
             mem_wb.write_data;  // possible hazard - @author - akash
-        
     }
 }
 
@@ -832,9 +826,9 @@ int main(int argc, char* argv[]) {
     f.close();
     regs[regint("sp")] = MAX_MEM - 1;
     // register initialisation
-//    regs[regint("s1")] = 8;
-//    regs[regint("s2")] = -8;
-//    regs[regint("s0")] = -1;
+    //    regs[regint("s1")] = 8;
+    //    regs[regint("s2")] = -8;
+    //    regs[regint("s0")] = -1;
 
     // parsing of input
     int i_ = 0;
@@ -871,6 +865,8 @@ int main(int argc, char* argv[]) {
 
     int cycles = 0;
 
+    int stalls = 4;
+
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
 
@@ -881,12 +877,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 3;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -901,16 +900,15 @@ int main(int argc, char* argv[]) {
             cur_instr = instr[i];
             cur_ins = ins[i];
         }
-        
+
         IF(i);
         // now that we are done with this stage, we see the kind of hazard that
         // has been encountered the hazard type is stored in hazard_type
-
     }
 
     ofstream outfile;
 
-  outfile.open("test.txt", ios_base::app); // append instead of overwrite
-  outfile << cycles << " "; 
-  return 0;
+    outfile.open("test.txt", ios_base::app);  // append instead of overwrite
+    outfile << cycles << " ";
+    return 0;
 }

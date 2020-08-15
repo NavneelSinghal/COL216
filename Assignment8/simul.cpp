@@ -884,6 +884,8 @@ int main(int argc, char* argv[]) {
     
     int cycles = 0;
 
+    int stalls = 4;
+
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
         
@@ -894,12 +896,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -922,7 +927,7 @@ int main(int argc, char* argv[]) {
 
     }
     cout << "Number of clock cycles: " << cycles << endl;    
-    
+    cout << "IPC: " << (float) (cycles - stalls) / cycles << endl;
     int x = 0;
     cerr << "Register values:" << endl;
     for (x = 0; x <= 31; x++) {

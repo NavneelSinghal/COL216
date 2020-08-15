@@ -164,3 +164,4 @@ Previously fetched instruction was: END 11
 IF stage instruction : END
 
 Number of clock cycles: 23
+IPC: 0.347826

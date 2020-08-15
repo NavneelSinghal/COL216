@@ -302,7 +302,6 @@ void IF(int i) {
     }
 }
 
-
 pair<int, int> check_hazard(
     int rs, int rt, int rd)  // takes the rs,rt and rd of an arithmetic
                              // instruction and determines no. of stalls if
@@ -311,8 +310,8 @@ pair<int, int> check_hazard(
     if (rs == 0 && rt == 0 &&
         rd == 0)  // empty instruction has no hazard whatsoever
     {
-        hazardBuffer[1] = hazardBuffer[0];	
-        hazardBuffer[0] = rd;	
+        hazardBuffer[1] = hazardBuffer[0];
+        hazardBuffer[0] = rd;
         return make_pair(0, 0);
     }
 
@@ -401,10 +400,10 @@ int ID() {
         return 1;
     }
 
-    if(jr && hz.first!=0) // special case for j as forwarding is done in ex state, but jump is done in id state
+    if (jr && hz.first != 0)  // special case for j as forwarding is done in ex
+                              // state, but jump is done in id state
     {
-        if(hz.first==10)
-        {
+        if (hz.first == 10) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -416,10 +415,8 @@ int ID() {
             control();
 
             return 2;
-
         }
-        if(hz.first==20)
-        {
+        if (hz.first == 20) {
             id_ex.instr_15_11 = "00000";
             id_ex.instr_20_16 = "00000";
             id_ex.sign_extend = "00000000000000000000000000000000";
@@ -438,7 +435,7 @@ int ID() {
         // }
         // else if(hz.first!=0)
         // {
-                       
+
         // }
         // else if(hz.second!=0)
         // {
@@ -610,7 +607,6 @@ int EX() {  // i is the program counter, its needed for jal
 }
 
 void MEM() {
-
     cout << "MEM stage instruction : " << ex_mem.instruction << endl;
 
     pc_src = ex_mem.zero && ex_mem.m.branch;
@@ -843,7 +839,7 @@ string instruction_to_32(string instr) {
         out += inttobin16(stoi(offset));
     } else if (instr == "END") {
         for (int i = 0; i < 32; i++) out += "0";
-    } else {	
+    } else {
         assert(out.size() == 32);
     }
     return out;
@@ -949,6 +945,8 @@ int main(int argc, char* argv[]) {
 
     int cycles = 0;
 
+    int stalls = 4;
+
     for (int i = 0; i <= i_ + 3; i++) {
         cycles += 1;
 
@@ -959,12 +957,15 @@ int main(int argc, char* argv[]) {
         stall = ID();
         if (stall == 1) {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 2)  // double stall
         {
             i = i - 2;
+            stalls += 2;
         } else if (stall == 3)  // control stall
         {
             i = i - 1;
+            stalls += 1;
         } else if (stall == 4)  // jump instruction !!
         {
             i = jump_to;
@@ -984,6 +985,7 @@ int main(int argc, char* argv[]) {
         IF(i);
     }
     cout << "Number of clock cycles: " << cycles << endl;
+    cout << "IPC: " << (float) (cycles - stalls) / cycles << endl;
 
     int x = 0;
     cerr << "Register values:" << endl;
