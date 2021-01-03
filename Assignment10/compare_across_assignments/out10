@@ -2,128 +2,57 @@ WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
 ID stage instruction : stall
-IF stage instruction : lw $s2 0 $s1 
+IF stage instruction : add $s1 $s1 $s2
 
 WB stage instruction : stall
 MEM stage instruction : stall
 EX stage instruction : stall
-ID stage instruction : lw $s2 0 $s1 
-IF stage instruction : add $s3 $s2 $s1
+ID stage instruction : add $s1 $s1 $s2
+IF stage instruction : add $s1 $s1 $s3
 
 WB stage instruction : stall
 MEM stage instruction : stall
-EX stage instruction : lw $s2 0 $s1 
-IF stage instruction : add $s3 $s2 $s1
+EX stage instruction : add $s1 $s1 $s2
+ID stage instruction : add $s1 $s1 $s3
+IF stage instruction : add $s1 $s1 $s4
 
 WB stage instruction : stall
 reg[0] becomes 0
-miss
-MEM stage instruction : lw $s2 0 $s1 
-EX stage instruction : stall
-ID stage instruction : add $s3 $s2 $s1
-IF stage instruction : add $s3 $s2 $s1
-
-WB stage instruction : stall
-MEM stage instruction : lw $s2 0 $s1 
-EX stage instruction : stall
-ID stage instruction : add $s3 $s2 $s1
-IF stage instruction : add $s3 $s2 $s1
-
-WB stage instruction : stall
-MEM stage instruction : lw $s2 0 $s1 
+MEM stage instruction : add $s1 $s1 $s2
 Forwarding happended
-EX stage instruction : stall
-ID stage instruction : add $s3 $s2 $s1
-IF stage instruction : add $s4 $s2 $zero
+EX stage instruction : add $s1 $s1 $s3
+ID stage instruction : add $s1 $s1 $s4
+IF stage instruction : add $s1 $s1 $s5
 
-WB stage instruction : lw $s2 0 $s1 
-reg[18] becomes 0
-MEM stage instruction : stall
+WB stage instruction : add $s1 $s1 $s2
+reg[17] becomes 3
+MEM stage instruction : add $s1 $s1 $s3
 Forwarding happended
-EX stage instruction : add $s3 $s2 $s1
-ID stage instruction : add $s4 $s2 $zero
-IF stage instruction : add $s4 $s1 $s4
-
-WB stage instruction : stall
-MEM stage instruction : add $s3 $s2 $s1
-EX stage instruction : add $s4 $s2 $zero
-ID stage instruction : add $s4 $s1 $s4
-IF stage instruction : sub $s4 $sp $s1
-
-WB stage instruction : add $s3 $s2 $s1
-reg[19] becomes 10
-MEM stage instruction : add $s4 $s2 $zero
-Forwarding happended
-EX stage instruction : add $s4 $s1 $s4
-ID stage instruction : sub $s4 $sp $s1
-IF stage instruction : sw $s4 0 $sp 
-
-WB stage instruction : add $s4 $s2 $zero
-reg[20] becomes 0
-MEM stage instruction : add $s4 $s1 $s4
-EX stage instruction : sub $s4 $sp $s1
-ID stage instruction : sw $s4 0 $sp 
-IF stage instruction : lw $s4 10 $s4 
-
-WB stage instruction : add $s4 $s1 $s4
-reg[20] becomes 10
-MEM stage instruction : sub $s4 $sp $s1
-Forwarding happended
-EX stage instruction : sw $s4 0 $sp 
-ID stage instruction : lw $s4 10 $s4 
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : sub $s4 $sp $s1
-reg[20] becomes 9999989
-hit
-MEM stage instruction : sw $s4 0 $sp 
-mem[9999999] becomes 9999989
-Forwarding happended
-EX stage instruction : lw $s4 10 $s4 
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : sw $s4 0 $sp 
-miss
-MEM stage instruction : lw $s4 10 $s4 
-EX stage instruction : stall
-ID stage instruction : add $s3 $s4 $s4
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : stall
-MEM stage instruction : lw $s4 10 $s4 
-EX stage instruction : stall
-ID stage instruction : add $s3 $s4 $s4
-IF stage instruction : add $s3 $s4 $s4
-
-WB stage instruction : stall
-MEM stage instruction : lw $s4 10 $s4 
-Forwarding happended
-Forwarding happended
-EX stage instruction : stall
-ID stage instruction : add $s3 $s4 $s4
+EX stage instruction : add $s1 $s1 $s4
+ID stage instruction : add $s1 $s1 $s5
 IF stage instruction : END_INSTRUCTIONS
 
-WB stage instruction : lw $s4 10 $s4 
-reg[20] becomes 9999989
-MEM stage instruction : stall
+WB stage instruction : add $s1 $s1 $s3
+reg[17] becomes 6
+MEM stage instruction : add $s1 $s1 $s4
 Forwarding happended
-Forwarding happended
-EX stage instruction : add $s3 $s4 $s4
+EX stage instruction : add $s1 $s1 $s5
 ID stage instruction : END_INSTRUCTIONS
 IF stage instruction : END
 
-WB stage instruction : stall
-MEM stage instruction : add $s3 $s4 $s4
+WB stage instruction : add $s1 $s1 $s4
+reg[17] becomes 10
+MEM stage instruction : add $s1 $s1 $s5
 EX stage instruction : END_INSTRUCTIONS
 ID stage instruction : END
 IF stage instruction : END
 
-WB stage instruction : add $s3 $s4 $s4
-reg[19] becomes 19999978
+WB stage instruction : add $s1 $s1 $s5
+reg[17] becomes 15
 MEM stage instruction : END_INSTRUCTIONS
 EX stage instruction : END
 ID stage instruction : END
 IF stage instruction : END
 
-Number of clock cycles: 18
-IPC: 0.444444
+Number of clock cycles: 8
+IPC: 0.5

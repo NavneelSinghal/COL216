@@ -1,0 +1,2968 @@
+
+---------------------------------------------
+
+
+Printing final state (verbose)
+
+Set # 0
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 9
+			Tag: 1
+			Original memory location: 128
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 83
+			Tag: 0
+			Original memory location: 0
+			Countdown: -1
+
+Set # 1
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 27
+			Tag: 1
+			Original memory location: 129
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 86
+			Tag: 0
+			Original memory location: 1
+			Countdown: -1
+
+Set # 2
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 1
+			Original memory location: 130
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 77
+			Tag: 0
+			Original memory location: 2
+			Countdown: -1
+
+Set # 3
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 56
+			Tag: 1
+			Original memory location: 131
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 15
+			Tag: 0
+			Original memory location: 3
+			Countdown: -1
+
+Set # 4
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 97
+			Tag: 1
+			Original memory location: 132
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 93
+			Tag: 0
+			Original memory location: 4
+			Countdown: -1
+
+Set # 5
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 53
+			Tag: 1
+			Original memory location: 133
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 35
+			Tag: 0
+			Original memory location: 5
+			Countdown: -1
+
+Set # 6
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 86
+			Tag: 1
+			Original memory location: 134
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 86
+			Tag: 0
+			Original memory location: 6
+			Countdown: -1
+
+Set # 7
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 65
+			Tag: 1
+			Original memory location: 135
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 92
+			Tag: 0
+			Original memory location: 7
+			Countdown: -1
+
+Set # 8
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 6
+			Tag: 1
+			Original memory location: 136
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 49
+			Tag: 0
+			Original memory location: 8
+			Countdown: -1
+
+Set # 9
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 83
+			Tag: 1
+			Original memory location: 137
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 21
+			Tag: 0
+			Original memory location: 9
+			Countdown: -1
+
+Set # 10
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 19
+			Tag: 1
+			Original memory location: 138
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 62
+			Tag: 0
+			Original memory location: 10
+			Countdown: -1
+
+Set # 11
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 24
+			Tag: 1
+			Original memory location: 139
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 27
+			Tag: 0
+			Original memory location: 11
+			Countdown: -1
+
+Set # 12
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 140
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 90
+			Tag: 0
+			Original memory location: 12
+			Countdown: -1
+
+Set # 13
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 71
+			Tag: 1
+			Original memory location: 141
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 59
+			Tag: 0
+			Original memory location: 13
+			Countdown: -1
+
+Set # 14
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 32
+			Tag: 1
+			Original memory location: 142
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 63
+			Tag: 0
+			Original memory location: 14
+			Countdown: -1
+
+Set # 15
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 1
+			Original memory location: 143
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 26
+			Tag: 0
+			Original memory location: 15
+			Countdown: -1
+
+Set # 16
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 3
+			Tag: 1
+			Original memory location: 144
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 40
+			Tag: 0
+			Original memory location: 16
+			Countdown: -1
+
+Set # 17
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 19
+			Tag: 1
+			Original memory location: 145
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 26
+			Tag: 0
+			Original memory location: 17
+			Countdown: -1
+
+Set # 18
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 70
+			Tag: 1
+			Original memory location: 146
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 72
+			Tag: 0
+			Original memory location: 18
+			Countdown: -1
+
+Set # 19
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 68
+			Tag: 1
+			Original memory location: 147
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 36
+			Tag: 0
+			Original memory location: 19
+			Countdown: -1
+
+Set # 20
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 8
+			Tag: 1
+			Original memory location: 148
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 11
+			Tag: 0
+			Original memory location: 20
+			Countdown: -1
+
+Set # 21
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 15
+			Tag: 1
+			Original memory location: 149
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 68
+			Tag: 0
+			Original memory location: 21
+			Countdown: -1
+
+Set # 22
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 40
+			Tag: 1
+			Original memory location: 150
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 0
+			Original memory location: 22
+			Countdown: -1
+
+Set # 23
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 49
+			Tag: 1
+			Original memory location: 151
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 0
+			Original memory location: 23
+			Countdown: -1
+
+Set # 24
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 96
+			Tag: 1
+			Original memory location: 152
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 82
+			Tag: 0
+			Original memory location: 24
+			Countdown: -1
+
+Set # 25
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 23
+			Tag: 1
+			Original memory location: 153
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 30
+			Tag: 0
+			Original memory location: 25
+			Countdown: -1
+
+Set # 26
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 18
+			Tag: 1
+			Original memory location: 154
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 62
+			Tag: 0
+			Original memory location: 26
+			Countdown: -1
+
+Set # 27
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 45
+			Tag: 1
+			Original memory location: 155
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 23
+			Tag: 0
+			Original memory location: 27
+			Countdown: -1
+
+Set # 28
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 46
+			Tag: 1
+			Original memory location: 156
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 0
+			Original memory location: 28
+			Countdown: -1
+
+Set # 29
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 51
+			Tag: 1
+			Original memory location: 157
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 35
+			Tag: 0
+			Original memory location: 29
+			Countdown: -1
+
+Set # 30
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 21
+			Tag: 1
+			Original memory location: 158
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 0
+			Original memory location: 30
+			Countdown: -1
+
+Set # 31
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 55
+			Tag: 1
+			Original memory location: 159
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 2
+			Tag: 0
+			Original memory location: 31
+			Countdown: -1
+
+Set # 32
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 79
+			Tag: 1
+			Original memory location: 160
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 22
+			Tag: 0
+			Original memory location: 32
+			Countdown: -1
+
+Set # 33
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 88
+			Tag: 1
+			Original memory location: 161
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 58
+			Tag: 0
+			Original memory location: 33
+			Countdown: -1
+
+Set # 34
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 64
+			Tag: 1
+			Original memory location: 162
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 69
+			Tag: 0
+			Original memory location: 34
+			Countdown: -1
+
+Set # 35
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 163
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 0
+			Original memory location: 35
+			Countdown: -1
+
+Set # 36
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 41
+			Tag: 1
+			Original memory location: 164
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 93
+			Tag: 0
+			Original memory location: 36
+			Countdown: -1
+
+Set # 37
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 50
+			Tag: 1
+			Original memory location: 165
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 56
+			Tag: 0
+			Original memory location: 37
+			Countdown: -1
+
+Set # 38
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 93
+			Tag: 1
+			Original memory location: 166
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 11
+			Tag: 0
+			Original memory location: 38
+			Countdown: -1
+
+Set # 39
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 0
+			Tag: 1
+			Original memory location: 167
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 42
+			Tag: 0
+			Original memory location: 39
+			Countdown: -1
+
+Set # 40
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 34
+			Tag: 1
+			Original memory location: 168
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 0
+			Original memory location: 40
+			Countdown: -1
+
+Set # 41
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 64
+			Tag: 1
+			Original memory location: 169
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 73
+			Tag: 0
+			Original memory location: 41
+			Countdown: -1
+
+Set # 42
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 24
+			Tag: 1
+			Original memory location: 170
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 21
+			Tag: 0
+			Original memory location: 42
+			Countdown: -1
+
+Set # 43
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 14
+			Tag: 1
+			Original memory location: 171
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 19
+			Tag: 0
+			Original memory location: 43
+			Countdown: -1
+
+Set # 44
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 87
+			Tag: 1
+			Original memory location: 172
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 84
+			Tag: 0
+			Original memory location: 44
+			Countdown: -1
+
+Set # 45
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 56
+			Tag: 1
+			Original memory location: 173
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 37
+			Tag: 0
+			Original memory location: 45
+			Countdown: -1
+
+Set # 46
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 1
+			Original memory location: 174
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 98
+			Tag: 0
+			Original memory location: 46
+			Countdown: -1
+
+Set # 47
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 91
+			Tag: 1
+			Original memory location: 175
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 24
+			Tag: 0
+			Original memory location: 47
+			Countdown: -1
+
+Set # 48
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 27
+			Tag: 1
+			Original memory location: 176
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 15
+			Tag: 0
+			Original memory location: 48
+			Countdown: -1
+
+Set # 49
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 65
+			Tag: 1
+			Original memory location: 177
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 70
+			Tag: 0
+			Original memory location: 49
+			Countdown: -1
+
+Set # 50
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 59
+			Tag: 1
+			Original memory location: 178
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 13
+			Tag: 0
+			Original memory location: 50
+			Countdown: -1
+
+Set # 51
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 36
+			Tag: 1
+			Original memory location: 179
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 26
+			Tag: 0
+			Original memory location: 51
+			Countdown: -1
+
+Set # 52
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 32
+			Tag: 1
+			Original memory location: 180
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 91
+			Tag: 0
+			Original memory location: 52
+			Countdown: -1
+
+Set # 53
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 51
+			Tag: 1
+			Original memory location: 181
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 80
+			Tag: 0
+			Original memory location: 53
+			Countdown: -1
+
+Set # 54
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 37
+			Tag: 1
+			Original memory location: 182
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 56
+			Tag: 0
+			Original memory location: 54
+			Countdown: -1
+
+Set # 55
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 183
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 73
+			Tag: 0
+			Original memory location: 55
+			Countdown: -1
+
+Set # 56
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 75
+			Tag: 1
+			Original memory location: 184
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 62
+			Tag: 0
+			Original memory location: 56
+			Countdown: -1
+
+Set # 57
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 7
+			Tag: 1
+			Original memory location: 185
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 70
+			Tag: 0
+			Original memory location: 57
+			Countdown: -1
+
+Set # 58
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 74
+			Tag: 1
+			Original memory location: 186
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 96
+			Tag: 0
+			Original memory location: 58
+			Countdown: -1
+
+Set # 59
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 21
+			Tag: 1
+			Original memory location: 187
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 81
+			Tag: 0
+			Original memory location: 59
+			Countdown: -1
+
+Set # 60
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 58
+			Tag: 1
+			Original memory location: 188
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 5
+			Tag: 0
+			Original memory location: 60
+			Countdown: -1
+
+Set # 61
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 95
+			Tag: 1
+			Original memory location: 189
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 25
+			Tag: 0
+			Original memory location: 61
+			Countdown: -1
+
+Set # 62
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 1
+			Original memory location: 190
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 84
+			Tag: 0
+			Original memory location: 62
+			Countdown: -1
+
+Set # 63
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 37
+			Tag: 1
+			Original memory location: 191
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 27
+			Tag: 0
+			Original memory location: 63
+			Countdown: -1
+
+Set # 64
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 35
+			Tag: 1
+			Original memory location: 192
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 36
+			Tag: 0
+			Original memory location: 64
+			Countdown: -1
+
+Set # 65
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 93
+			Tag: 1
+			Original memory location: 193
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 5
+			Tag: 0
+			Original memory location: 65
+			Countdown: -1
+
+Set # 66
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 18
+			Tag: 1
+			Original memory location: 194
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 46
+			Tag: 0
+			Original memory location: 66
+			Countdown: -1
+
+Set # 67
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 195
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 0
+			Original memory location: 67
+			Countdown: -1
+
+Set # 68
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 1
+			Original memory location: 196
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 13
+			Tag: 0
+			Original memory location: 68
+			Countdown: -1
+
+Set # 69
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 11
+			Tag: 1
+			Original memory location: 197
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 57
+			Tag: 0
+			Original memory location: 69
+			Countdown: -1
+
+Set # 70
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 198
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 24
+			Tag: 0
+			Original memory location: 70
+			Countdown: -1
+
+Set # 71
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 29
+			Tag: 1
+			Original memory location: 199
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 95
+			Tag: 0
+			Original memory location: 71
+			Countdown: -1
+
+Set # 72
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 76
+			Tag: 1
+			Original memory location: 200
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 82
+			Tag: 0
+			Original memory location: 72
+			Countdown: -1
+
+Set # 73
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 4
+			Tag: 1
+			Original memory location: 201
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 45
+			Tag: 0
+			Original memory location: 73
+			Countdown: -1
+
+Set # 74
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 1
+			Original memory location: 202
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 14
+			Tag: 0
+			Original memory location: 74
+			Countdown: -1
+
+Set # 75
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 63
+			Tag: 1
+			Original memory location: 203
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 0
+			Original memory location: 75
+			Countdown: -1
+
+Set # 76
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 13
+			Tag: 1
+			Original memory location: 204
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 34
+			Tag: 0
+			Original memory location: 76
+			Countdown: -1
+
+Set # 77
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 38
+			Tag: 1
+			Original memory location: 205
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 64
+			Tag: 0
+			Original memory location: 77
+			Countdown: -1
+
+Set # 78
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 6
+			Tag: 1
+			Original memory location: 206
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 0
+			Original memory location: 78
+			Countdown: -1
+
+Set # 79
+	High priority elements: 1
+	Low priority elements: 1
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 40
+			Tag: 1
+			Original memory location: 207
+			Countdown: 1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 50
+			Tag: 0
+			Original memory location: 79
+			Countdown: -1
+
+Set # 80
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 4
+			Tag: 1
+			Original memory location: 208
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 87
+			Tag: 0
+			Original memory location: 80
+			Countdown: -1
+
+Set # 81
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 18
+			Tag: 1
+			Original memory location: 209
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 8
+			Tag: 0
+			Original memory location: 81
+			Countdown: -1
+
+Set # 82
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 210
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 76
+			Tag: 0
+			Original memory location: 82
+			Countdown: -1
+
+Set # 83
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 88
+			Tag: 1
+			Original memory location: 211
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 78
+			Tag: 0
+			Original memory location: 83
+			Countdown: -1
+
+Set # 84
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 69
+			Tag: 1
+			Original memory location: 212
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 88
+			Tag: 0
+			Original memory location: 84
+			Countdown: -1
+
+Set # 85
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 17
+			Tag: 1
+			Original memory location: 213
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 84
+			Tag: 0
+			Original memory location: 85
+			Countdown: -1
+
+Set # 86
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 17
+			Tag: 1
+			Original memory location: 214
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 3
+			Tag: 0
+			Original memory location: 86
+			Countdown: -1
+
+Set # 87
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 96
+			Tag: 1
+			Original memory location: 215
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 51
+			Tag: 0
+			Original memory location: 87
+			Countdown: -1
+
+Set # 88
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 24
+			Tag: 1
+			Original memory location: 216
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 54
+			Tag: 0
+			Original memory location: 88
+			Countdown: -1
+
+Set # 89
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 1
+			Original memory location: 217
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 99
+			Tag: 0
+			Original memory location: 89
+			Countdown: -1
+
+Set # 90
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 70
+			Tag: 1
+			Original memory location: 218
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 32
+			Tag: 0
+			Original memory location: 90
+			Countdown: -1
+
+Set # 91
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 83
+			Tag: 1
+			Original memory location: 219
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 60
+			Tag: 0
+			Original memory location: 91
+			Countdown: -1
+
+Set # 92
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 90
+			Tag: 1
+			Original memory location: 220
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 76
+			Tag: 0
+			Original memory location: 92
+			Countdown: -1
+
+Set # 93
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 99
+			Tag: 1
+			Original memory location: 221
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 68
+			Tag: 0
+			Original memory location: 93
+			Countdown: -1
+
+Set # 94
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 72
+			Tag: 1
+			Original memory location: 222
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 39
+			Tag: 0
+			Original memory location: 94
+			Countdown: -1
+
+Set # 95
+	High priority elements: 1
+	Low priority elements: 1
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 25
+			Tag: 1
+			Original memory location: 223
+			Countdown: 5
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 12
+			Tag: 0
+			Original memory location: 95
+			Countdown: -1
+
+Set # 96
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 44
+			Tag: 1
+			Original memory location: 224
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 26
+			Tag: 0
+			Original memory location: 96
+			Countdown: -1
+
+Set # 97
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 90
+			Tag: 1
+			Original memory location: 225
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 86
+			Tag: 0
+			Original memory location: 97
+			Countdown: -1
+
+Set # 98
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 5
+			Tag: 1
+			Original memory location: 226
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 94
+			Tag: 0
+			Original memory location: 98
+			Countdown: -1
+
+Set # 99
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 39
+			Tag: 1
+			Original memory location: 227
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 39
+			Tag: 0
+			Original memory location: 99
+			Countdown: -1
+
+Set # 100
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 54
+			Tag: 1
+			Original memory location: 228
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 95
+			Tag: 0
+			Original memory location: 100
+			Countdown: -1
+
+Set # 101
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 86
+			Tag: 1
+			Original memory location: 229
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 70
+			Tag: 0
+			Original memory location: 101
+			Countdown: -1
+
+Set # 102
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 69
+			Tag: 1
+			Original memory location: 230
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 34
+			Tag: 0
+			Original memory location: 102
+			Countdown: -1
+
+Set # 103
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 82
+			Tag: 1
+			Original memory location: 231
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 78
+			Tag: 0
+			Original memory location: 103
+			Countdown: -1
+
+Set # 104
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 42
+			Tag: 1
+			Original memory location: 232
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 67
+			Tag: 0
+			Original memory location: 104
+			Countdown: -1
+
+Set # 105
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 64
+			Tag: 1
+			Original memory location: 233
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 1
+			Tag: 0
+			Original memory location: 105
+			Countdown: -1
+
+Set # 106
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 97
+			Tag: 1
+			Original memory location: 234
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 97
+			Tag: 0
+			Original memory location: 106
+			Countdown: -1
+
+Set # 107
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 7
+			Tag: 1
+			Original memory location: 235
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 2
+			Tag: 0
+			Original memory location: 107
+			Countdown: -1
+
+Set # 108
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 55
+			Tag: 1
+			Original memory location: 236
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 17
+			Tag: 0
+			Original memory location: 108
+			Countdown: -1
+
+Set # 109
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 4
+			Tag: 1
+			Original memory location: 237
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 92
+			Tag: 0
+			Original memory location: 109
+			Countdown: -1
+
+Set # 110
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 48
+			Tag: 1
+			Original memory location: 238
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 52
+			Tag: 0
+			Original memory location: 110
+			Countdown: -1
+
+Set # 111
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 11
+			Tag: 1
+			Original memory location: 239
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 56
+			Tag: 0
+			Original memory location: 111
+			Countdown: -1
+
+Set # 112
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 22
+			Tag: 1
+			Original memory location: 240
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 20751
+			Tag: 3
+			Original memory location: 496
+			Countdown: -1
+
+Set # 113
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 28
+			Tag: 1
+			Original memory location: 241
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 31711
+			Tag: 3
+			Original memory location: 497
+			Countdown: -1
+
+Set # 114
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 99
+			Tag: 1
+			Original memory location: 242
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 28675
+			Tag: 3
+			Original memory location: 498
+			Countdown: -1
+
+Set # 115
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 43
+			Tag: 1
+			Original memory location: 243
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 27266
+			Tag: 3
+			Original memory location: 499
+			Countdown: -1
+
+Set # 116
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 46
+			Tag: 1
+			Original memory location: 244
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 37805
+			Tag: 3
+			Original memory location: 500
+			Countdown: -1
+
+Set # 117
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 68
+			Tag: 1
+			Original memory location: 245
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 34013
+			Tag: 3
+			Original memory location: 501
+			Countdown: -1
+
+Set # 118
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 40
+			Tag: 1
+			Original memory location: 246
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 20549
+			Tag: 3
+			Original memory location: 502
+			Countdown: -1
+
+Set # 119
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 22
+			Tag: 1
+			Original memory location: 247
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 33897
+			Tag: 3
+			Original memory location: 503
+			Countdown: -1
+
+Set # 120
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 11
+			Tag: 1
+			Original memory location: 248
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 29873
+			Tag: 3
+			Original memory location: 504
+			Countdown: -1
+
+Set # 121
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 10
+			Tag: 1
+			Original memory location: 249
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 29065
+			Tag: 3
+			Original memory location: 505
+			Countdown: -1
+
+Set # 122
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 5
+			Tag: 1
+			Original memory location: 250
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 29586
+			Tag: 3
+			Original memory location: 506
+			Countdown: -1
+
+Set # 123
+	High priority elements: 0
+	Low priority elements: 2
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 1
+			Tag: 1
+			Original memory location: 251
+			Countdown: -1
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 21907
+			Tag: 3
+			Original memory location: 507
+			Countdown: -1
+
+Set # 124
+	High priority elements: 1
+	Low priority elements: 1
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 61
+			Tag: 1
+			Original memory location: 252
+			Countdown: 0
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 31282
+			Tag: 3
+			Original memory location: 508
+			Countdown: -1
+
+Set # 125
+	High priority elements: 1
+	Low priority elements: 1
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 30
+			Tag: 1
+			Original memory location: 253
+			Countdown: 4
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 27242
+			Tag: 3
+			Original memory location: 509
+			Countdown: -1
+
+Set # 126
+	High priority elements: 1
+	Low priority elements: 1
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: No
+			Value: 78
+			Tag: 1
+			Original memory location: 254
+			Countdown: 8
+		Block # 1
+			Valid: Yes
+			Dirty: Yes
+			Value: 31470
+			Tag: 3
+			Original memory location: 510
+			Countdown: -1
+
+Set # 127
+	High priority elements: 2
+	Low priority elements: 0
+	Blocks 
+		Block # 0
+			Valid: Yes
+			Dirty: Yes
+			Value: 16605
+			Tag: 3
+			Original memory location: 511
+			Countdown: 15
+		Block # 1
+			Valid: Yes
+			Dirty: No
+			Value: 5
+			Tag: 1
+			Original memory location: 255
+			Countdown: 13
+
+---------------------------------------------
+
+
+Printing final state (in order of sets)
+9, 1, 1, 0
+83, 0, 1, 0
+27, 1, 1, 0
+86, 0, 1, 0
+67, 1, 1, 0
+77, 0, 1, 0
+56, 1, 1, 0
+15, 0, 1, 0
+97, 1, 1, 0
+93, 0, 1, 0
+53, 1, 1, 0
+35, 0, 1, 0
+86, 1, 1, 0
+86, 0, 1, 0
+65, 1, 1, 0
+92, 0, 1, 0
+6, 1, 1, 0
+49, 0, 1, 0
+83, 1, 1, 0
+21, 0, 1, 0
+19, 1, 1, 0
+62, 0, 1, 0
+24, 1, 1, 0
+27, 0, 1, 0
+28, 1, 1, 0
+90, 0, 1, 0
+71, 1, 1, 0
+59, 0, 1, 0
+32, 1, 1, 0
+63, 0, 1, 0
+29, 1, 1, 0
+26, 0, 1, 0
+3, 1, 1, 0
+40, 0, 1, 0
+19, 1, 1, 0
+26, 0, 1, 0
+70, 1, 1, 0
+72, 0, 1, 0
+68, 1, 1, 0
+36, 0, 1, 0
+8, 1, 1, 0
+11, 0, 1, 0
+15, 1, 1, 0
+68, 0, 1, 0
+40, 1, 1, 0
+67, 0, 1, 0
+49, 1, 1, 0
+29, 0, 1, 0
+96, 1, 1, 0
+82, 0, 1, 0
+23, 1, 1, 0
+30, 0, 1, 0
+18, 1, 1, 0
+62, 0, 1, 0
+45, 1, 1, 0
+23, 0, 1, 0
+46, 1, 1, 0
+67, 0, 1, 0
+51, 1, 1, 0
+35, 0, 1, 0
+21, 1, 1, 0
+29, 0, 1, 0
+55, 1, 1, 0
+2, 0, 1, 0
+79, 1, 1, 0
+22, 0, 1, 0
+88, 1, 1, 0
+58, 0, 1, 0
+64, 1, 1, 0
+69, 0, 1, 0
+28, 1, 1, 0
+67, 0, 1, 0
+41, 1, 1, 0
+93, 0, 1, 0
+50, 1, 1, 0
+56, 0, 1, 0
+93, 1, 1, 0
+11, 0, 1, 0
+0, 1, 1, 0
+42, 0, 1, 0
+34, 1, 1, 0
+29, 0, 1, 0
+64, 1, 1, 0
+73, 0, 1, 0
+24, 1, 1, 0
+21, 0, 1, 0
+14, 1, 1, 0
+19, 0, 1, 0
+87, 1, 1, 0
+84, 0, 1, 0
+56, 1, 1, 0
+37, 0, 1, 0
+43, 1, 1, 0
+98, 0, 1, 0
+91, 1, 1, 0
+24, 0, 1, 0
+27, 1, 1, 0
+15, 0, 1, 0
+65, 1, 1, 0
+70, 0, 1, 0
+59, 1, 1, 0
+13, 0, 1, 0
+36, 1, 1, 0
+26, 0, 1, 0
+32, 1, 1, 0
+91, 0, 1, 0
+51, 1, 1, 0
+80, 0, 1, 0
+37, 1, 1, 0
+56, 0, 1, 0
+28, 1, 1, 0
+73, 0, 1, 0
+75, 1, 1, 0
+62, 0, 1, 0
+7, 1, 1, 0
+70, 0, 1, 0
+74, 1, 1, 0
+96, 0, 1, 0
+21, 1, 1, 0
+81, 0, 1, 0
+58, 1, 1, 0
+5, 0, 1, 0
+95, 1, 1, 0
+25, 0, 1, 0
+29, 1, 1, 0
+84, 0, 1, 0
+37, 1, 1, 0
+27, 0, 1, 0
+35, 1, 1, 0
+36, 0, 1, 0
+93, 1, 1, 0
+5, 0, 1, 0
+18, 1, 1, 0
+46, 0, 1, 0
+28, 1, 1, 0
+29, 0, 1, 0
+43, 1, 1, 0
+13, 0, 1, 0
+11, 1, 1, 0
+57, 0, 1, 0
+28, 1, 1, 0
+24, 0, 1, 0
+29, 1, 1, 0
+95, 0, 1, 0
+76, 1, 1, 0
+82, 0, 1, 0
+4, 1, 1, 0
+45, 0, 1, 0
+43, 1, 1, 0
+14, 0, 1, 0
+63, 1, 1, 0
+67, 0, 1, 0
+13, 1, 1, 0
+34, 0, 1, 0
+38, 1, 1, 0
+64, 0, 1, 0
+6, 1, 1, 0
+43, 0, 1, 0
+40, 1, 1, 0
+50, 0, 1, 0
+4, 1, 1, 0
+87, 0, 1, 0
+18, 1, 1, 0
+8, 0, 1, 0
+28, 1, 1, 0
+76, 0, 1, 0
+88, 1, 1, 0
+78, 0, 1, 0
+69, 1, 1, 0
+88, 0, 1, 0
+17, 1, 1, 0
+84, 0, 1, 0
+17, 1, 1, 0
+3, 0, 1, 0
+96, 1, 1, 0
+51, 0, 1, 0
+24, 1, 1, 0
+54, 0, 1, 0
+43, 1, 1, 0
+99, 0, 1, 0
+70, 1, 1, 0
+32, 0, 1, 0
+83, 1, 1, 0
+60, 0, 1, 0
+90, 1, 1, 0
+76, 0, 1, 0
+99, 1, 1, 0
+68, 0, 1, 0
+72, 1, 1, 0
+39, 0, 1, 0
+25, 1, 1, 0
+12, 0, 1, 0
+44, 1, 1, 0
+26, 0, 1, 0
+90, 1, 1, 0
+86, 0, 1, 0
+5, 1, 1, 0
+94, 0, 1, 0
+39, 1, 1, 0
+39, 0, 1, 0
+54, 1, 1, 0
+95, 0, 1, 0
+86, 1, 1, 0
+70, 0, 1, 0
+69, 1, 1, 0
+34, 0, 1, 0
+82, 1, 1, 0
+78, 0, 1, 0
+42, 1, 1, 0
+67, 0, 1, 0
+64, 1, 1, 0
+1, 0, 1, 0
+97, 1, 1, 0
+97, 0, 1, 0
+7, 1, 1, 0
+2, 0, 1, 0
+55, 1, 1, 0
+17, 0, 1, 0
+4, 1, 1, 0
+92, 0, 1, 0
+48, 1, 1, 0
+52, 0, 1, 0
+11, 1, 1, 0
+56, 0, 1, 0
+22, 1, 1, 0
+20751, 3, 1, 1
+28, 1, 1, 0
+31711, 3, 1, 1
+99, 1, 1, 0
+28675, 3, 1, 1
+43, 1, 1, 0
+27266, 3, 1, 1
+46, 1, 1, 0
+37805, 3, 1, 1
+68, 1, 1, 0
+34013, 3, 1, 1
+40, 1, 1, 0
+20549, 3, 1, 1
+22, 1, 1, 0
+33897, 3, 1, 1
+11, 1, 1, 0
+29873, 3, 1, 1
+10, 1, 1, 0
+29065, 3, 1, 1
+5, 1, 1, 0
+29586, 3, 1, 1
+1, 1, 1, 0
+21907, 3, 1, 1
+61, 1, 1, 0
+31282, 3, 1, 1
+30, 1, 1, 0
+27242, 3, 1, 1
+78, 1, 1, 0
+31470, 3, 1, 1
+16605, 3, 1, 1
+5, 1, 1, 0
+
+---------------------------------------------
+
+
+Printing final state (in order of (block number, set number))
+9, 1, 1, 0
+27, 1, 1, 0
+67, 1, 1, 0
+56, 1, 1, 0
+97, 1, 1, 0
+53, 1, 1, 0
+86, 1, 1, 0
+65, 1, 1, 0
+6, 1, 1, 0
+83, 1, 1, 0
+19, 1, 1, 0
+24, 1, 1, 0
+28, 1, 1, 0
+71, 1, 1, 0
+32, 1, 1, 0
+29, 1, 1, 0
+3, 1, 1, 0
+19, 1, 1, 0
+70, 1, 1, 0
+68, 1, 1, 0
+8, 1, 1, 0
+15, 1, 1, 0
+40, 1, 1, 0
+49, 1, 1, 0
+96, 1, 1, 0
+23, 1, 1, 0
+18, 1, 1, 0
+45, 1, 1, 0
+46, 1, 1, 0
+51, 1, 1, 0
+21, 1, 1, 0
+55, 1, 1, 0
+79, 1, 1, 0
+88, 1, 1, 0
+64, 1, 1, 0
+28, 1, 1, 0
+41, 1, 1, 0
+50, 1, 1, 0
+93, 1, 1, 0
+0, 1, 1, 0
+34, 1, 1, 0
+64, 1, 1, 0
+24, 1, 1, 0
+14, 1, 1, 0
+87, 1, 1, 0
+56, 1, 1, 0
+43, 1, 1, 0
+91, 1, 1, 0
+27, 1, 1, 0
+65, 1, 1, 0
+59, 1, 1, 0
+36, 1, 1, 0
+32, 1, 1, 0
+51, 1, 1, 0
+37, 1, 1, 0
+28, 1, 1, 0
+75, 1, 1, 0
+7, 1, 1, 0
+74, 1, 1, 0
+21, 1, 1, 0
+58, 1, 1, 0
+95, 1, 1, 0
+29, 1, 1, 0
+37, 1, 1, 0
+35, 1, 1, 0
+93, 1, 1, 0
+18, 1, 1, 0
+28, 1, 1, 0
+43, 1, 1, 0
+11, 1, 1, 0
+28, 1, 1, 0
+29, 1, 1, 0
+76, 1, 1, 0
+4, 1, 1, 0
+43, 1, 1, 0
+63, 1, 1, 0
+13, 1, 1, 0
+38, 1, 1, 0
+6, 1, 1, 0
+40, 1, 1, 0
+4, 1, 1, 0
+18, 1, 1, 0
+28, 1, 1, 0
+88, 1, 1, 0
+69, 1, 1, 0
+17, 1, 1, 0
+17, 1, 1, 0
+96, 1, 1, 0
+24, 1, 1, 0
+43, 1, 1, 0
+70, 1, 1, 0
+83, 1, 1, 0
+90, 1, 1, 0
+99, 1, 1, 0
+72, 1, 1, 0
+25, 1, 1, 0
+44, 1, 1, 0
+90, 1, 1, 0
+5, 1, 1, 0
+39, 1, 1, 0
+54, 1, 1, 0
+86, 1, 1, 0
+69, 1, 1, 0
+82, 1, 1, 0
+42, 1, 1, 0
+64, 1, 1, 0
+97, 1, 1, 0
+7, 1, 1, 0
+55, 1, 1, 0
+4, 1, 1, 0
+48, 1, 1, 0
+11, 1, 1, 0
+22, 1, 1, 0
+28, 1, 1, 0
+99, 1, 1, 0
+43, 1, 1, 0
+46, 1, 1, 0
+68, 1, 1, 0
+40, 1, 1, 0
+22, 1, 1, 0
+11, 1, 1, 0
+10, 1, 1, 0
+5, 1, 1, 0
+1, 1, 1, 0
+61, 1, 1, 0
+30, 1, 1, 0
+78, 1, 1, 0
+16605, 3, 1, 1
+83, 0, 1, 0
+86, 0, 1, 0
+77, 0, 1, 0
+15, 0, 1, 0
+93, 0, 1, 0
+35, 0, 1, 0
+86, 0, 1, 0
+92, 0, 1, 0
+49, 0, 1, 0
+21, 0, 1, 0
+62, 0, 1, 0
+27, 0, 1, 0
+90, 0, 1, 0
+59, 0, 1, 0
+63, 0, 1, 0
+26, 0, 1, 0
+40, 0, 1, 0
+26, 0, 1, 0
+72, 0, 1, 0
+36, 0, 1, 0
+11, 0, 1, 0
+68, 0, 1, 0
+67, 0, 1, 0
+29, 0, 1, 0
+82, 0, 1, 0
+30, 0, 1, 0
+62, 0, 1, 0
+23, 0, 1, 0
+67, 0, 1, 0
+35, 0, 1, 0
+29, 0, 1, 0
+2, 0, 1, 0
+22, 0, 1, 0
+58, 0, 1, 0
+69, 0, 1, 0
+67, 0, 1, 0
+93, 0, 1, 0
+56, 0, 1, 0
+11, 0, 1, 0
+42, 0, 1, 0
+29, 0, 1, 0
+73, 0, 1, 0
+21, 0, 1, 0
+19, 0, 1, 0
+84, 0, 1, 0
+37, 0, 1, 0
+98, 0, 1, 0
+24, 0, 1, 0
+15, 0, 1, 0
+70, 0, 1, 0
+13, 0, 1, 0
+26, 0, 1, 0
+91, 0, 1, 0
+80, 0, 1, 0
+56, 0, 1, 0
+73, 0, 1, 0
+62, 0, 1, 0
+70, 0, 1, 0
+96, 0, 1, 0
+81, 0, 1, 0
+5, 0, 1, 0
+25, 0, 1, 0
+84, 0, 1, 0
+27, 0, 1, 0
+36, 0, 1, 0
+5, 0, 1, 0
+46, 0, 1, 0
+29, 0, 1, 0
+13, 0, 1, 0
+57, 0, 1, 0
+24, 0, 1, 0
+95, 0, 1, 0
+82, 0, 1, 0
+45, 0, 1, 0
+14, 0, 1, 0
+67, 0, 1, 0
+34, 0, 1, 0
+64, 0, 1, 0
+43, 0, 1, 0
+50, 0, 1, 0
+87, 0, 1, 0
+8, 0, 1, 0
+76, 0, 1, 0
+78, 0, 1, 0
+88, 0, 1, 0
+84, 0, 1, 0
+3, 0, 1, 0
+51, 0, 1, 0
+54, 0, 1, 0
+99, 0, 1, 0
+32, 0, 1, 0
+60, 0, 1, 0
+76, 0, 1, 0
+68, 0, 1, 0
+39, 0, 1, 0
+12, 0, 1, 0
+26, 0, 1, 0
+86, 0, 1, 0
+94, 0, 1, 0
+39, 0, 1, 0
+95, 0, 1, 0
+70, 0, 1, 0
+34, 0, 1, 0
+78, 0, 1, 0
+67, 0, 1, 0
+1, 0, 1, 0
+97, 0, 1, 0
+2, 0, 1, 0
+17, 0, 1, 0
+92, 0, 1, 0
+52, 0, 1, 0
+56, 0, 1, 0
+20751, 3, 1, 1
+31711, 3, 1, 1
+28675, 3, 1, 1
+27266, 3, 1, 1
+37805, 3, 1, 1
+34013, 3, 1, 1
+20549, 3, 1, 1
+33897, 3, 1, 1
+29873, 3, 1, 1
+29065, 3, 1, 1
+29586, 3, 1, 1
+21907, 3, 1, 1
+31282, 3, 1, 1
+27242, 3, 1, 1
+31470, 3, 1, 1
+5, 1, 1, 0
+Cache statistics
+Number of accesses = 16640
+Number of reads = 12288
+Number of read hits = 11289
+Number of read misses = 999
+Number of writes = 4352
+Number of write hits = 4096
+Number of write misses = 256
+Hit ratio = 0.9245793269

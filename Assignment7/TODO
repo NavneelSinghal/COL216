@@ -1,5 +1,0 @@
-Test for jump
-Check if we need to take input as machine code instead of just high level assembly code
-We also need to add addi if needed, so that we can put stuff in the register
-stack pointer
-bracket offset parsing
